@@ -1,0 +1,397 @@
+/* ── Surface ──────────────────────────────────────────────────────────── */
+.slidev-layout {
+  background-color: var(--paper);
+  color: var(--ink);
+  /* Whisper-faint graph-paper dot grid — the retro substrate. */
+  background-image: radial-gradient(var(--line) 1.1px, transparent 1.1px);
+  background-size: 28px 28px;
+  background-position: -14px -14px;
+  padding-bottom: 3.2rem; /* clearance for the global footer */
+}
+
+/* ── Typography ───────────────────────────────────────────────────────── */
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: var(--slidev-font-mono);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.slidev-layout h1 {
+  font-size: 2.9rem;
+  line-height: 1.04;
+}
+
+/* Section headers get the accent rule. */
+.slidev-layout h2 {
+  font-size: 1.7rem;
+  display: inline-block;
+  padding-bottom: 0.18em;
+  margin-bottom: 0.9em;
+  border-bottom: 3px solid var(--accent);
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  line-height: 1.6;
+}
+
+/* ── Links ────────────────────────────────────────────────────────────── */
+.slidev-layout a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+.slidev-layout a:hover { color: var(--accent); }
+
+/* ── Maze-cell bullets ────────────────────────────────────────────────── */
+.slidev-layout ul {
+  list-style: none;
+  padding-left: 1.3em;
+}
+.slidev-layout ul li {
+  position: relative;
+}
+.slidev-layout ul li::before {
+  content: '';
+  position: absolute;
+  left: -1.3em;
+  top: 0.62em;
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--accent);
+}
+/* Nested bullets: hollow cell */
+.slidev-layout ul ul li::before {
+  background: transparent;
+  border: 1.5px solid var(--ink-soft);
+}
+
+/* ── Code ─────────────────────────────────────────────────────────────── */
+.slidev-layout pre {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+}
+
+.slidev-layout :not(pre) > code {
+  font-family: var(--slidev-font-mono);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent-ink);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* ── Reusable accents ─────────────────────────────────────────────────── */
+.kicker {
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.accent { color: var(--accent); }
+
+.byline {
+  margin-top: 2.4rem;
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+
+/* ── Cover ────────────────────────────────────────────────────────────── */
+.cover-slide { text-align: center; }
+.cover-slide h1 { font-size: 3.6rem; margin-top: 0.2rem; }
+.cover-slide .kicker { display: block; margin-bottom: 0.6rem; }
+
+/* CSS-drawn MIDI Maze smiley — the one piece of pure nostalgia. */
+.maze-smiley {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 1.6rem;
+  border-radius: 50%;
+  background: var(--smiley);
+  border: 3px solid var(--ink);
+  position: relative;
+}
+.maze-smiley::before {  /* eyes */
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 24px;
+  width: 9px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 32px 0 0 var(--ink);
+}
+.maze-smiley::after {   /* mouth */
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  width: 38px;
+  height: 19px;
+  border: 3px solid var(--ink);
+  border-top: 0;
+  border-radius: 0 0 38px 38px;
+}
+
+/* ── Section dividers ─────────────────────────────────────────────────── */
+.act-num {
+  font-family: var(--font-pixel);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.slidev-layout.section h1 { font-size: 3rem; }
+.recap {
+  margin-top: 1.6rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* ── Placeholder boxes (diagrams / images / video to add later) ───────── */
+.ph {
+  border: 2px dashed var(--line);
+  border-radius: 8px;
+  padding: 1.6rem;
+  text-align: center;
+  color: var(--ink-soft);
+  background: color-mix(in srgb, var(--paper-2) 60%, transparent);
+}
+.ph__tag {
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Abstraction ladder (the salient idea) ────────────────────────────── */
+.ladder { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 0.6rem; }
+.rung {
+  display: flex; align-items: center; gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.55rem 1rem;
+  background: var(--paper-2);
+}
+.rung__name { font-family: var(--slidev-font-mono); font-weight: 600; min-width: 10rem; }
+.rung__ai { margin-left: auto; font-size: 0.82rem; font-weight: 600; }
+.rung.good   { border-left: 4px solid #2e9e5b; }
+.rung.good   .rung__ai { color: #2e9e5b; }
+.rung.meh    { border-left: 4px solid #d9a40a; }
+.rung.meh    .rung__ai { color: #b8890a; }
+.rung.bad    { border-left: 4px solid var(--accent); }
+.rung.bad    .rung__ai { color: var(--accent-ink); }
+
+/* ── Inspection-loop diagram (the "key metric" slide) ─────────────────── */
+.loop { position: relative; width: 320px; height: 320px; flex: none; }
+.loop__ring {
+  position: absolute; inset: 32px; border: 2px dashed var(--line); border-radius: 50%;
+}
+.loop__hint {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+}
+.loop__hint > span {
+  max-width: 150px; text-align: center; font-size: 0.72rem;
+  color: var(--ink-soft); line-height: 1.3;
+}
+.node {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--a)) translateY(-128px) rotate(calc(-1 * var(--a)));
+  background: var(--paper-2); border: 1.5px solid var(--line); border-radius: 8px;
+  padding: 0.3rem 0.6rem; font-family: var(--slidev-font-mono); font-weight: 600;
+  font-size: 0.78rem; white-space: nowrap; text-align: center; line-height: 1.1;
+}
+.node.is-key { border-color: var(--accent); border-width: 2px; color: var(--accent-ink); }
+
+.eras { display: flex; flex-direction: column; gap: 0.7rem; }
+.era {
+  border: 1px solid var(--line); border-left: 4px solid var(--line);
+  border-radius: 6px; padding: 0.5rem 0.9rem; background: var(--paper-2);
+}
+.era__year { font-family: var(--font-pixel); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--ink-soft); }
+.era__desc { font-size: 0.9rem; margin-top: 0.15rem; }
+.era__verdict { font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem; }
+.era.bad   { border-left-color: #d23f57; }
+.era.bad   .era__verdict { color: #d23f57; }
+.era.good  { border-left-color: #2e9e5b; }
+.era.good  .era__verdict { color: #2e9e5b; }
+.era.twist { border-left-color: var(--accent); }
+.era.twist .era__verdict { color: var(--accent-ink); }
+
+/* ── Slide 3 collage — scrapbook of portrait + SidecarTridge images ───── */
+.collage { position: relative; width: 100%; height: 470px; }
+.collage .frame {
+  position: absolute;
+  width: var(--w);
+  transform: rotate(var(--r));
+  background: #fff;
+  padding: 7px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+.collage .frame img { display: block; width: 100%; height: auto; border-radius: 2px; }
+.collage .frame.pixel img { image-rendering: pixelated; }
+
+/* ── FPS lineage (slide 6) — polaroid strip, MIDI Maze as the root ─────── */
+.lineage {
+  display: flex; flex-wrap: nowrap; gap: 0.6rem;
+  justify-content: center; align-items: flex-end; margin-top: 1.6rem;
+}
+.shot {
+  width: 104px; flex: none; background: #fff; border: 1px solid var(--line);
+  border-radius: 4px; padding: 5px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: rotate(var(--r, 0deg));
+}
+.shot img { display: block; width: 100%; height: 110px; object-fit: cover; border-radius: 2px; }
+.shot__cap { margin-top: 0.45rem; text-align: center; line-height: 1.15; }
+.shot__name { font-weight: 700; font-size: 0.66rem; }
+.shot__year {
+  display: block; font-family: var(--font-pixel);
+  font-size: 0.5rem; letter-spacing: 0.04em; color: var(--ink-soft); margin-top: 0.15rem;
+}
+.shot.root { border: 2px solid var(--accent); }
+.shot.root .shot__year { color: var(--accent-ink); }
+
+/* ── MIDI ring diagram (slide 7) ──────────────────────────────────────── */
+.ring-svg { width: 100%; max-width: 410px; height: auto; display: block; margin: 0.3rem auto 0; }
+.ring-node { fill: var(--paper-2); stroke: var(--line); stroke-width: 1.5; }
+.ring-node.master { fill: color-mix(in srgb, var(--accent) 12%, #fff); stroke: var(--accent); stroke-width: 2.5; }
+.ring-label { font-family: var(--slidev-font-mono); font-weight: 700; font-size: 12px; fill: var(--ink); }
+.ring-sub { font-family: var(--font-pixel); font-size: 7px; fill: var(--ink-soft); }
+.ring-sub.master { fill: var(--accent-ink); }
+.ring-arrow { fill: none; stroke: var(--accent); stroke-width: 3; }
+.ring-center { font-family: var(--font-pixel); font-size: 8px; fill: var(--ink-soft); }
+
+/* ── MIDI ring diagram: extra detail ──────────────────────────────────── */
+.ring-port { font-family: var(--slidev-font-mono); font-size: 7.5px; fill: var(--ink-soft); }
+.ring-anno { font-family: var(--font-pixel); font-size: 7.5px; letter-spacing: 0.04em; fill: var(--accent-ink); }
+.ring-chip { fill: var(--accent); }
+.ring-chip-text { font-family: var(--font-pixel); font-size: 7px; letter-spacing: 0.05em; fill: #fff; }
+.ring-foot { font-size: 0.74rem; color: var(--ink-soft); text-align: center; margin-top: 0.5rem; line-height: 1.4; }
+
+/* ── Embedded gameplay video (responsive 16:9) ────────────────────────── */
+.video-embed {
+  position: relative; width: 100%; max-width: 760px; margin: 0.4rem auto 0;
+  aspect-ratio: 16 / 9; border: 1px solid var(--line); border-radius: 8px;
+  overflow: hidden; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); background: #000;
+}
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-cap {
+  text-align: center; margin-top: 0.6rem; font-family: var(--font-pixel);
+  font-size: 0.56rem; letter-spacing: 0.06em; color: var(--ink-soft);
+}
+
+/* ── Vintage manual scan (MIDI ring slide) ────────────────────────────── */
+.manual-card {
+  width: 330px; background: #fff; border: 1px solid var(--line);
+  border-radius: 5px; padding: 8px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+.manual-shot {
+  display: block; width: 100%; height: 178px;
+  object-fit: cover; object-position: top; border-radius: 2px;
+}
+.manual-cap {
+  text-align: center; margin-top: 0.5rem; font-family: var(--font-pixel);
+  font-size: 0.54rem; letter-spacing: 0.06em; color: var(--ink-soft);
+}
+
+/* ── Ports slide (MIDI Maze → Faceball 2000) ──────────────────────────── */
+.ports { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.3rem; }
+.port {
+  border: 1px solid var(--line); border-radius: 8px; padding: 0.7rem 1rem;
+  background: var(--paper-2); min-width: 150px;
+}
+.port__plat { display: block; font-family: var(--slidev-font-mono); font-weight: 700; font-size: 1.05rem; }
+.port__meta {
+  display: block; font-family: var(--font-pixel); font-size: 0.54rem;
+  letter-spacing: 0.05em; color: var(--ink-soft); margin-top: 0.4rem;
+}
+.port.orig { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, #fff); }
+.port.orig .port__meta { color: var(--accent-ink); }
+.ports-foot { margin-top: 1.5rem; font-size: 0.8rem; color: var(--ink-soft); }
+
+/* ── Architecture diagram (Act 2) ─────────────────────────────────────── */
+.arch-svg { width: 100%; max-width: 880px; height: auto; display: block; margin: 0.6rem auto 0; }
+.arch-box { fill: var(--paper-2); stroke: var(--line); stroke-width: 1.5; }
+.arch-box.bridge { fill: color-mix(in srgb, var(--accent) 10%, #fff); stroke: var(--accent); stroke-width: 2.5; }
+.arch-cloud { fill: #fff; stroke: var(--line); stroke-width: 1.5; }
+.arch-title { font-family: var(--slidev-font-mono); font-weight: 700; font-size: 15px; fill: var(--ink); }
+.arch-sub { font-family: var(--font-pixel); font-size: 7.5px; fill: var(--ink-soft); }
+.arch-sub.accent { fill: var(--accent-ink); }
+.arch-anno { font-family: var(--font-pixel); font-size: 7px; letter-spacing: 0.04em; fill: var(--accent-ink); }
+.arch-link { stroke: var(--ink); stroke-width: 2.5; fill: none; }
+.arch-link.wifi { stroke: var(--accent); stroke-dasharray: 5 4; }
+.arch-linklbl { font-family: var(--font-pixel); font-size: 7px; letter-spacing: 0.06em; fill: var(--ink-soft); }
+
+/* ── Architecture v2: full network stack ──────────────────────────────── */
+.arch2-svg { width: 100%; max-width: 970px; height: auto; display: block; margin: 0.2rem auto 0; }
+.dev { fill: var(--paper-2); stroke: var(--line); stroke-width: 1.5; }
+.dev-hd { fill: color-mix(in srgb, var(--ink) 7%, var(--paper-2)); stroke: var(--line); stroke-width: 1.5; }
+.dev-title { font-family: var(--slidev-font-mono); font-weight: 700; font-size: 11.5px; fill: var(--ink); }
+.layer { fill: #fff; stroke: var(--line); stroke-width: 1; }
+.layer.hook { fill: color-mix(in srgb, var(--accent) 15%, #fff); stroke: var(--accent); stroke-width: 2; }
+.layer.bridge { fill: color-mix(in srgb, var(--accent) 10%, #fff); stroke: var(--accent); stroke-width: 1.5; }
+.layer-t { font-family: var(--slidev-font-mono); font-size: 10px; fill: var(--ink); }
+.layer-t.accent { fill: var(--accent-ink); font-weight: 600; }
+.note-t { font-family: var(--font-pixel); font-size: 6.5px; letter-spacing: 0.03em; fill: var(--ink-soft); }
+.srv { fill: color-mix(in srgb, var(--link) 12%, #fff); stroke: var(--link); stroke-width: 2; }
+.srv-t { font-family: var(--slidev-font-mono); font-weight: 700; font-size: 11.5px; fill: var(--ink); }
+.srv-s { font-family: var(--font-pixel); font-size: 6.5px; fill: var(--ink-soft); }
+.ghost { opacity: 0.5; }
+.flow2 { stroke: var(--ink); stroke-width: 2.5; }
+.flow2.net { stroke: var(--accent); }
+.flow2-lbl { font-family: var(--font-pixel); font-size: 7px; letter-spacing: 0.05em; fill: var(--ink-soft); }
+
+/* ── Architecture: virtual-ring arc ───────────────────────────────────── */
+.ring-arc { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 4; }
+.ring-arc-lbl { font-family: var(--font-pixel); font-size: 8px; letter-spacing: 0.06em; fill: var(--accent-ink); }
+
+/* ── Architecture: in/out packet-flow arrows through the stacks ────────── */
+.flow-out, .flow-in { stroke-width: 2.4; stroke-dasharray: 5 4; animation: pktflow 0.9s linear infinite; }
+.flow-out { stroke: var(--accent); }
+.flow-in  { stroke: var(--link); }
+@keyframes pktflow { to { stroke-dashoffset: -18; } }
+
+/* ── ST-vs-PC architecture comparison (slide 10) ──────────────────────── */
+.archcmp {
+  display: grid; grid-template-columns: 1fr 46px 1fr; gap: 6px 0;
+  max-width: 880px; margin: 0.3rem auto 0;
+}
+.archcmp__head { font-family: var(--slidev-font-mono); font-weight: 700; text-align: center; font-size: 0.95rem; }
+.acell {
+  border: 1px solid var(--line); border-radius: 7px; background: var(--paper-2);
+  padding: 0.32rem 0.8rem;
+}
+.acell__name { font-family: var(--slidev-font-mono); font-weight: 600; font-size: 0.92rem; }
+.acell__sub { font-size: 0.68rem; color: var(--ink-soft); margin-top: 0.05rem; }
+.tlabel {
+  font-family: var(--font-pixel); font-size: 0.54rem; letter-spacing: 0.04em;
+  color: var(--accent-ink); margin-left: 0.4rem;
+}
+.acell.hot { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, #fff); }
+.approx { display: grid; place-items: center; color: var(--ink-soft); font-weight: 700; font-size: 1.1rem; }
+
+/* ── Big "the idea" highlight banner ──────────────────────────────────── */
+.bigidea {
+  margin: 0.7rem auto 0; max-width: 900px;
+  background: var(--accent); color: #fff;
+  border-radius: 10px; padding: 0.7rem 1.1rem;
+  text-align: center; font-size: 1.02rem; line-height: 1.45;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 38%, transparent);
+}
+.bigidea strong { color: #fff; }
+.bigidea .spark { font-family: var(--font-pixel); font-size: 0.6rem; letter-spacing: 0.12em; display: block; margin-bottom: 0.25rem; opacity: 0.9; }

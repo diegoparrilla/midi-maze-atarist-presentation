@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.slidev/
+*.local
+
+# Export artifacts
+slides-export.pdf
+slides-export.pptx
+slides-export/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# OS
+.DS_Store

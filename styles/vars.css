@@ -1,0 +1,33 @@
+/* Silkscreen = pixel font, used ONLY for small chrome (kickers, slide numbers). */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+  /* Light base — clean and projector-legible */
+  --paper:      #f6f3ec;  /* warm off-white */
+  --paper-2:    #fffdf8;  /* cards / code */
+  --ink:        #181a1f;  /* near-black text */
+  --ink-soft:   #5a5d66;  /* muted text */
+  --line:       #ddd7c9;  /* warm grid / hairlines */
+
+  /* Accents — one hot Atari orange hero, teal for links */
+  --accent:     #ff5a1f;
+  --accent-ink: #c23c0c;
+  --link:       #117a6f;
+  --smiley:     #f5c518;  /* MIDI Maze yellow — motif only */
+
+  --font-pixel: 'Silkscreen', 'IBM Plex Mono', monospace;
+
+  --slidev-theme-primary: var(--accent);
+}
+
+/* Dark variant (toggle with `d` in the deck) — orange pops harder on ink */
+html.dark {
+  --paper:      #0f1116;
+  --paper-2:    #161922;
+  --ink:        #ececea;
+  --ink-soft:   #9a9da6;
+  --line:       #2a2e38;
+  --accent:     #ff7a3c;
+  --accent-ink: #ffa274;
+  --link:       #4fd0c0;
+}
