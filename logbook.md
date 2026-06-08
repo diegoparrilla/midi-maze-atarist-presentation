@@ -264,3 +264,7 @@ bottom. Each entry: date, time (CEST), and what was accomplished.
 ### 20:39 — First commit (end of session)
 - Added `.claude/settings.local.json` to `.gitignore` (local-only), then committed the
   whole deck to `main`. Verified node_modules/dist stay ignored. Session wrap-up.
+
+### 20:46 — Optimized public/hw-gameboy.png
+- Downscaled the Game Boy photo from 2820×3420 (6.4 MB) to 659×800 (480 KB) with `sips`
+  — ~93% smaller, no visible loss at the polaroid size. Verified by render.
