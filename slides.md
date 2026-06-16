@@ -242,6 +242,37 @@ Keep a local copy as backup even if you stream.
 layout: two-cols
 ---
 
+## Wait — what's an Atari ST?
+
+For everyone who wasn't born yet:
+
+- A 16-bit **home computer** — Atari, **1985**
+- **Motorola 68000** CPU — same family as the first Macs & the Amiga
+- **GEM**: a mouse-and-windows desktop, years before most homes had Windows
+- **MIDI ports built in** — the musician's machine (and why this talk exists)
+- A few hundred KB of RAM · floppy disks · no hard drive
+
+<div class="mt-3 text-lg">If you're under 40, it's <span class="accent">older than you</span>.</div>
+
+::right::
+
+<div class="text-center mt-2">
+  <img src="/hw-atarist.jpg" alt="Atari 1040 ST with monitor running GEM" style="width: 100%; background:#fff; padding:8px; border:1px solid var(--line); border-radius:6px; box-shadow:0 6px 16px rgba(0,0,0,0.16)" />
+  <div class="manual-cap">Atari 1040 ST + monitor, running GEM (1985)</div>
+</div>
+
+<!--
+A primer for an audience that may never have seen one. Keep it FAST and concrete: 1985
+home computer, 68000 CPU (the chip in early Macs and the Amiga), a real mouse-driven GUI
+(GEM) before most people had Windows, and — the detail that matters for us — MIDI IN/OUT
+ports built right in, which made it the musician's machine and is the reason MIDI Maze
+could network over MIDI at all. Land the "older than you" joke. ~45s.
+-->
+
+---
+layout: two-cols
+---
+
 ## The trick: a MIDI ring
 
 Players chained machine-to-machine through the **MIDI ports** — each ST's OUT into the next ST's IN, all the way around.
@@ -461,80 +492,106 @@ That was the metal. Hold onto it — we'll come back.
 <!-- WINSTON verbal punctuation / landmark. Anyone who drifted can rejoin here. ~15s. -->
 
 ---
-
-## Number of inspections = the key metric
-
-<div class="flex gap-8 items-center mt-2">
-
-<div class="loop">
-  <div class="loop__ring"></div>
-  <div class="loop__hint"><span>You only <b>learn</b><br>once per lap</span></div>
-  <div class="node" style="--a:0deg">Code</div>
-  <div class="node" style="--a:60deg">Test</div>
-  <div class="node" style="--a:120deg">Build &amp;<br>Reload</div>
-  <div class="node is-key" style="--a:180deg">Inspect</div>
-  <div class="node" style="--a:240deg">Commit</div>
-  <div class="node" style="--a:300deg">LEARN!</div>
-</div>
-
-<div class="eras flex-1">
-  <div class="era bad" v-click>
-    <span class="era__year">1988</span>
-    <div class="era__desc">Compile off a floppy, squint at the screen.</div>
-    <div class="era__verdict">Slow &amp; expensive → don't fail</div>
-  </div>
-  <div class="era good" v-click>
-    <span class="era__year">2023</span>
-    <div class="era__desc">Hot reload, debuggers, git.</div>
-    <div class="era__verdict">Fast &amp; cheap → fail fast</div>
-  </div>
-  <div class="era twist" v-click>
-    <span class="era__year">2026 · AI</span>
-    <div class="era__desc">AI runs the lap for you. Inspections ≈ free.</div>
-    <div class="era__verdict">Bottleneck moves to judgment</div>
-  </div>
-</div>
-
-</div>
-
-<!--
-THE EVOLUTION SLIDE — bridges 1988 (metal) and 2026 (stack). The loop is Code → Test →
-Build & Reload → Inspect → Commit → LEARN. The metric is how many laps you can afford,
-because you only LEARN once per lap. Reveal eras one click at a time.
-
-Per-step time, the point to make verbally:
-  Step            1988            2023           2026 (AI)
-  Code            hours, by hand  minutes (IDE)  seconds*  (*high abstraction only)
-  Build & Reload  minutes/floppy  seconds        instant
-  Inspect         printf / LED    debugger/logs  AI reads output, proposes fix
-  Commit          save & pray     git, instant   AI branches for you
-  LEARN           few laps, slow  many, fail-fast lap ≈ free → judging, not doing
-
-1988: laps so expensive you optimize to NOT fail (precision).
-2023: laps free → fail fast, recover faster.
-2026: AI laps for you → iteration stops being the bottleneck; JUDGMENT is. "Knowing when
-it's wrong" — the same line as the closing slide.
-
-KILLER TIE-IN (say it): in MIDI Maze I was in all three eras AT ONCE — 2026 in Python,
-~2023 in C, still 1988 in 68000 asm. The era isn't the date; it's the abstraction level.
-That sentence links this slide to the ladder and the takeaway. ~2 min.
--->
-
----
 layout: section
 ---
 
 <span class="act-num">ACT 2 · 2026</span>
 
-# The stack
+# Faking the MIDI ring
 
-<div class="recap">Previously: 1986, close to the metal.</div>
+<div class="recap">Make every ST believe the cable ring is still there.</div>
 
-<!-- Divider + recap (cycling the thesis). -->
+<!-- Divider + recap. Act 2 = the plan + the build: introduce the SidecarT and the
+"ring orchestrator" goal BEFORE the architecture, then climb the rungs. -->
+
+---
+layout: two-cols
+---
+
+## Meet the SidecarT
+
+Not a "ROM emulator" — a tool to **enhance** the ST. A bizarre **coprocessor** (here: our network bridge).
+
+- **Cartridge port** · **RP2040** (Pi Pico-class) + **Wi-Fi**
+- Custom **microfirmware**; ST ↔ board over **TPROTOCOL**
+- **2,200+** built · ~200–400 clones in the wild
+- Open source: **firmware GPL** · **hardware CC** (non-commercial)
+
+::right::
+
+<div class="text-center mt-2">
+  <img src="/sidecart-board.png" alt="SidecarT board" style="width: 230px; background:#fff; padding:8px; border:1px solid var(--line); border-radius:6px; box-shadow:0 6px 16px rgba(0,0,0,0.16)" />
+  <div class="manual-cap">SidecarT · RP2040 + Wi-Fi</div>
+</div>
+
+<!--
+Introduce the device BEFORE the architecture. THE FRAME: people call it a "ROM emulator",
+but it's really a developer tool that bolts a modern brain onto the ST — a bizarre
+coprocessor. It's a cartridge with an RP2040 + Wi-Fi; the ST can't write to the cartridge
+(read-only bus), so the two talk over TPROTOCOL via ROM reads. Credibility: 2,200+ units
+built and ~200–400 clones — a real, shipping product, not a breadboard. And it's open: GPL
+firmware, CC (non-commercial) hardware — worth saying out loud to an open-source crowd.
+Today we repurpose it as the MIDI-to-network bridge. ~60s.
+-->
 
 ---
 
-## The architecture
+## The plan: one virtual ring
+
+Each **ST + SidecarT** is a node; a **TCP/IP "ring orchestrator"** passes the frame around — a *virtual* ring.
+
+<svg class="goal-svg" viewBox="0 0 740 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- real TCP/IP connections (spokes to the orchestrator) -->
+  <line class="spoke" x1="370" y1="175" x2="370" y2="50" />
+  <line class="spoke" x1="370" y1="175" x2="620" y2="175" />
+  <line class="spoke" x1="370" y1="175" x2="370" y2="300" />
+  <line class="spoke" x1="370" y1="175" x2="120" y2="175" />
+
+  <!-- the virtual MIDI ring (logical) -->
+  <ellipse class="vring" cx="370" cy="175" rx="250" ry="125" />
+
+  <!-- nodes -->
+  <rect class="dev" x="295" y="25" width="150" height="50" rx="8" />
+  <text class="dev-title" x="370" y="47" text-anchor="middle">Atari ST</text>
+  <text class="note-t" x="370" y="63" text-anchor="middle" style="fill: var(--accent-ink)">+ SidecarT</text>
+
+  <rect class="dev" x="545" y="150" width="150" height="50" rx="8" />
+  <text class="dev-title" x="620" y="172" text-anchor="middle">Atari ST</text>
+  <text class="note-t" x="620" y="188" text-anchor="middle" style="fill: var(--accent-ink)">+ SidecarT</text>
+
+  <rect class="dev" x="295" y="275" width="150" height="50" rx="8" />
+  <text class="dev-title" x="370" y="297" text-anchor="middle">Atari ST</text>
+  <text class="note-t" x="370" y="313" text-anchor="middle" style="fill: var(--accent-ink)">+ SidecarT</text>
+
+  <rect class="dev" x="45" y="150" width="150" height="50" rx="8" />
+  <text class="dev-title" x="120" y="172" text-anchor="middle">Atari ST</text>
+  <text class="note-t" x="120" y="188" text-anchor="middle" style="fill: var(--accent-ink)">+ SidecarT</text>
+
+  <!-- ring orchestrator -->
+  <rect class="srv" x="290" y="143" width="160" height="64" rx="8" />
+  <text class="srv-t" x="370" y="170" text-anchor="middle">Ring Orchestrator</text>
+  <text class="srv-s" x="370" y="187" text-anchor="middle">TCP/IP · Python</text>
+</svg>
+
+<div class="text-center" style="font-size: 0.82rem; color: var(--ink-soft)">
+  <span style="color: var(--accent)">┄ virtual ring (logical)</span> &nbsp;·&nbsp; — real TCP/IP, every node to the orchestrator
+</div>
+
+<div class="text-center mt-1" style="font-size: 0.95rem">
+  To each ST it must look <strong>exactly</strong> like 1987 — same bytes, same order. We just move the wire to the Internet.
+</div>
+
+<!--
+The GOAL, stated before the detailed design. Physically it's a STAR (every SidecarT
+connects to one TCP/IP server, the "ring orchestrator"); logically it's the same RING as
+1987 — the orchestrator passes each frame node-to-node in ring order. The hard constraint:
+MIDI Maze and the ST stay 100% unmodified; to them it must be byte-for-byte the old cable
+ring. Next slide: how the pieces actually fit together. ~75s.
+-->
+
+---
+
+## The Candidate Architecture
 
 <svg class="arch2-svg" viewBox="0 -56 910 291" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -594,8 +651,8 @@ layout: section
 
   <!-- routing server (Python) -->
   <rect class="srv" x="395" y="92" width="110" height="117" rx="8" />
-  <text class="srv-t" x="450" y="114" text-anchor="middle">TCP/IP server</text>
-  <text class="srv-s" x="450" y="131" text-anchor="middle" style="fill: var(--accent-ink)">· Python ·</text>
+  <text class="srv-t" x="450" y="114" text-anchor="middle">Orchestrator</text>
+  <text class="srv-s" x="450" y="131" text-anchor="middle" style="fill: var(--accent-ink)">TCP/IP · Python</text>
   <text class="srv-s" v-click="2" x="450" y="159" text-anchor="middle">routes the ring</text>
   <text class="srv-s" v-click="2" x="450" y="172" text-anchor="middle">node → node</text>
 
@@ -703,46 +760,70 @@ trap frame.) ~2 min.
 -->
 
 ---
+layout: two-cols
+---
 
 ## Rung: C (the Pico)
 
-- RP2040 firmware: MIDI in/out, Wi-Fi, the bridge logic
-- Real-time-ish, but with a stdlib and a debugger
-- Where most of the "make it actually work" lived
+- MIDI Maze is **lock-step**: every byte **out** is answered by a byte **in** — that's the game's clock
+- So, first assumption: relay it **byte-by-byte, in order, with a handshake** — *exactly* like the cable
+- Read-only cartridge → emulate ROM, snoop **ROM3** reads via **PIO + DMA**
+- Carried over **TPROTOCOL** — the SidecarT's command channel, built for **synchronous** multi-KB buffers & commands → lots of **plumbing**
+- **lwIP** TCP up to the orchestrator · RP2040 @ **225 MHz**
 
-<div class="ph mt-6">
-  <span class="ph__tag">photo</span>
-  The Pico wired to the Atari ST / the bridge board
+::right::
+
+<div class="mt-4" style="background:#fff; padding:8px; border:1px solid var(--line); border-radius:6px; box-shadow:0 6px 16px rgba(0,0,0,0.16)">
+  <img src="/sidecart-st-photo.jpg" alt="SidecarT board beside the Atari ST" style="display:block; width:100%; border-radius:3px" />
 </div>
+<div class="manual-cap">The SidecarT (RP2040) and the Atari ST</div>
 
-<!-- War story rung 2: comfortable middle ground. ~75s. -->
+<!--
+FIRST ASSUMPTION ONLY — no spoilers here. MIDI Maze is genuinely lock-step (constraint
+C-01): every MIDI OUT byte is answered by a synchronous IN readback, and that lock-step IS
+the frame clock. So the faithful first assumption was: relay each byte across the bridge,
+in order, with a confirm/ack handshake — reproduce the cable exactly. Mechanism (the
+candidate build): read-only cartridge, so the Pico emulates ROM and snoops ROM3 reads via
+a PIO+DMA ring; the exchange rides TPROTOCOL — the SidecarT's command channel, designed for
+synchronous multi-KB buffer transfers and commands, so each byte drags a lot of plumbing;
+lwIP TCP to the orchestrator; ~4,800 lines of C + PIO.
+DO NOT reveal here that this per-byte handshake turned out 3× too slow — that collision and
+the streaming fix are the "Reality bites → The Final Architecture" turn at the end of Act 2. ~75s.
+-->
 
 ---
 
 ## Rung: Python (the glue)
 
-- Test harnesses, packet inspection, the PC-side client
-- Fast to write, fast to throw away
-- The layer furthest from the metal — remember that
+- The **ring orchestrator** — a Python **asyncio** TCP server wiring every node into a ring
+- First version is **smart**: master election, flow-control, match coordination
+- Plus **self-test harnesses** & packet inspection — write fast, throw away fast
+- The layer **furthest from the metal**
 
 <!--
-War story rung 3. Explicitly flag "furthest from the metal" — this is the setup for the
-Act 3 payoff. ~60s.
+Rung 3 — first-version Python only (from md-MIDI2IP). The orchestrator (orchestrator.py,
+asyncio TCP server) accepts every node and wires them into a ring; in this first version
+it's the "smart" one — master election, flow-control, match coordination. Plus selftest
+harnesses & packet inspection. Furthest from the metal — the setup for the Act 3 payoff.
+NOTE: don't mention Hatari / the Hatari gateway here — it's introduced LATER to justify v2.
+And don't reveal that the orchestrator is later gutted to a dumb relay — that's the reveal. ~60s.
 -->
 
 ---
 
 ## The AI cast
 
-- **Codex** — ...
-- **Claude Code** — ...
-- **Copilot** — ...
-- **NotebookLM** — the reference librarian (Atari manuals, MIDI specs)
+- **OpenAI · Codex / ChatGPT 5.4 & 5.5** — Codex optimised the microfirmware & **TPROTOCOL** (C + 68000); ChatGPT researched & designed the solution and architecture
+- **Anthropic · Claude Code 5.7 & 5.8** — solution coding… and this presentation ;-)
+- **GitHub Copilot** — code reviews
+- **Google NotebookLM** — the librarian: Atari reference books + the MIDI-Maze-to-PC reverse-engineering TFG by **Jesús Ángel González Gorrado**
 
 <!--
-Introduce the AI tools as recurring CHARACTERS, not a feature list. One line each on the
-role they played. We'll pay them off as "personalities" in Act 3. Keep placeholders here
-until you decide who gets credit/blame for what. ~75s.
+Introduce the AI tools as recurring CHARACTERS — we pay them off as the three "personalities"
+in Act 3. Roles: Codex for low-level optimisation (firmware/TPROTOCOL, C & 68000); ChatGPT
+for research + architecture design; Claude Code for the solution code (and this deck);
+Copilot for reviews; NotebookLM as the source-grounded librarian over the Atari books and
+the UNIZAR TFG (reverse-engineering MIDI Maze for PC) by Jesús Ángel González Gorrado. ~75s.
 -->
 
 ---
@@ -761,7 +842,7 @@ layout: section
 
 # AI vs the ladder
 
-<div class="recap">Previously: 1986 metal → 2026 stack. Now the payoff.</div>
+<div class="recap">Previously: 1986 metal → 2026 rebuild. Now the payoff.</div>
 
 <!-- Divider into the heart of the talk. -->
 
@@ -858,6 +939,56 @@ layout: statement
 <!--
 The payoff moment. PREFER a recorded clip over live (Winston: control your risk). If live,
 have the video as backup. ~2-3 min including setup.
+-->
+
+---
+
+## Number of inspections = the key metric
+
+<div class="flex gap-8 items-center mt-2">
+
+<div class="loop">
+  <div class="loop__ring"></div>
+  <div class="loop__hint"><span>You only <b>learn</b><br>once per lap</span></div>
+  <div class="node" style="--a:0deg">Code</div>
+  <div class="node" style="--a:60deg">Test</div>
+  <div class="node" style="--a:120deg">Build &amp;<br>Reload</div>
+  <div class="node is-key" style="--a:180deg">Inspect</div>
+  <div class="node" style="--a:240deg">Commit</div>
+  <div class="node" style="--a:300deg">LEARN!</div>
+</div>
+
+<div class="eras flex-1">
+  <div class="era bad" v-click>
+    <span class="era__year">1988</span>
+    <div class="era__desc">Compile off a floppy, squint at the screen.</div>
+    <div class="era__verdict">Slow &amp; expensive → don't fail</div>
+  </div>
+  <div class="era good" v-click>
+    <span class="era__year">2023</span>
+    <div class="era__desc">Hot reload, debuggers, git.</div>
+    <div class="era__verdict">Fast &amp; cheap → fail fast</div>
+  </div>
+  <div class="era twist" v-click>
+    <span class="era__year">2026 · AI</span>
+    <div class="era__desc">AI runs the lap for you. Inspections ≈ free.</div>
+    <div class="era__verdict">Bottleneck moves to judgment</div>
+  </div>
+</div>
+
+</div>
+
+<!--
+ZOOM-OUT, right before the takeaway. The project worked (previous slide) — but the real
+story is how *building itself* changed. The loop is Code → Test → Build & Reload → Inspect
+→ Commit → LEARN; you only LEARN once per lap, so the metric is how many laps you can
+afford. Reveal the eras one click at a time:
+  1988: laps so expensive you optimize to NOT fail (precision).
+  2023: laps cheap → fail fast, recover faster.
+  2026: AI runs the lap for you → iteration is ~free, so the bottleneck moves to JUDGMENT.
+This hands straight into "What to take home": the durable skill is knowing when it's wrong.
+TIE-IN: in this project I was in all three eras at once — 2026 in Python, ~2023 in C, still
+1988 in 68000 asm. The era isn't the date; it's the abstraction level. ~2 min.
 -->
 
 ---

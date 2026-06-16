@@ -395,3 +395,8 @@
 }
 .bigidea strong { color: #fff; }
 .bigidea .spark { font-family: var(--font-pixel); font-size: 0.6rem; letter-spacing: 0.12em; display: block; margin-bottom: 0.25rem; opacity: 0.9; }
+
+/* ── "The plan" goal diagram (nodes + ring orchestrator) ──────────────── */
+.goal-svg { width: 100%; max-width: 590px; height: auto; display: block; margin: 0.3rem auto 0; }
+.spoke { stroke: var(--ink-soft); stroke-width: 2; }
+.vring { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 4; }

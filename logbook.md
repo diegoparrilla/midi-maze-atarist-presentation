@@ -268,3 +268,71 @@ bottom. Each entry: date, time (CEST), and what was accomplished.
 ### 20:46 — Optimized public/hw-gameboy.png
 - Downscaled the Game Boy photo from 2820×3420 (6.4 MB) to 659×800 (480 KB) with `sips`
   — ~93% smaller, no visible loss at the polaroid size. Verified by render.
+
+### 18:13 — Renamed the architecture slide
+- Slide 18 heading "The architecture" → "The Candidate Architecture", setting up a
+  candidate → (revisions) → "Final Architecture" arc to be added later. Uncommitted.
+
+### 18:25 — Added real SidecarT photo to slide 20
+- Placed a real photo (SidecarT RP2040 board beside the Atari ST) on the "Rung: C (the
+  Pico)" slide, replacing the placeholder; made it two-col (bullets left, framed photo
+  right). Compressed the source from 40 MB PNG to 268 KB JPEG (1400px). Uncommitted.
+
+### 18:46 — Reordered Act 2: introduce SidecarT + the goal before the architecture
+- The architecture was dropping SidecarT/RP2040 on the audience with no intro. Fixed:
+  renamed the Act 2 divider "The stack" → "Faking the MIDI ring"; added two slides before
+  "The Candidate Architecture": (1) "Meet the SidecarT" (device intro: cartridge port,
+  RP2040 + Wi-Fi, microfirmware, TPROTOCOL; board photo) and (2) "The plan: one virtual
+  ring" (new SVG: ST+SidecarT nodes around a central "Ring Orchestrator" — dashed virtual
+  ring + solid TCP/IP spokes). Renamed the architecture's server box to "Orchestrator" and
+  updated the Act 3 recap. Added `.goal-svg/.spoke/.vring` CSS. Deck = 35 slides. Uncommitted.
+
+### 18:57 — Moved the inspection-loop slide to the conclusion; added an Atari ST primer
+- Moved "Number of inspections = the key metric" out of Act 1's setup to right before
+  "What to take home" (it's the same 1988→2026 evolution thesis as the takeaway; now the
+  conclusion zoom-out after the demo). Rung 1 → Act 2 now joins cleanly.
+- Added a new slide before the MIDI ring: "Wait — what's an Atari ST?" (1985 home computer,
+  68000, GEM, built-in MIDI ports; 1040 ST photo + "older than you" line) for audience
+  members who never saw one. Deck = 36 slides. Uncommitted.
+
+### 19:07 — Enriched "Meet the SidecarT" (slide 18)
+- Reframed the headline ("not a ROM emulator — a bizarre coprocessor") and condensed to
+  four bullets adding: 2,200+ built (+ ~200–400 clones) and open-source licensing (firmware
+  GPL, hardware CC non-commercial). Avoided an 8-bullet wall by merging the tech lines.
+
+### 19:18 — Populated slide 22 (Rung: C) from the md-MIDI2IP repo
+- Explored ../md-MIDI2IP (the real project) and cherry-picked concrete RP2040-firmware
+  facts: ~4,800 lines C+PIO, 225 MHz overclock, read-only cartridge → ROM emulation +
+  ROM3 PIO/DMA snoop, 16 KB in/out queues, lwIP TCP @ 1 ms poll. Added the throughput
+  war story as a banner: v1 per-byte handshake ~970 B/s (3× slower than 1987's 3125 B/s)
+  → v2 fire-and-forget streaming beat the original ring (EPIC-09). Repo also has 12 epics
+  + a Python orchestrator (~830 LOC) available for other slides.
+
+### 19:33 — Narrative principle: candidate = first assumptions only
+- Agreed the deck arc: everything up to/including The Candidate Architecture + the rungs
+  presents only FIRST ASSUMPTIONS; the "how we had to change it" is a later reveal
+  ("Reality bites → The Final Architecture") placed at the END of Act 2, before Act 3.
+- De-spoilered slide 22 (Rung: C): removed the v2 fire-and-forget banner + the ~970 B/s
+  verdict; reframed as the lock-step, byte-by-byte handshake assumption (mirror the cable).
+  Audited the other rungs + Candidate Architecture — clean (no solution leaks).
+- TODO next: build the "Reality bites → The Final Architecture" turn at the end of Act 2.
+
+### 19:41 — Enriched the C and Python rungs (first-version only)
+- Slide 22 (Rung: C): added the TPROTOCOL bullet — the SidecarT's command channel, built
+  for synchronous multi-KB buffers/commands, so per-byte MIDI drags lots of plumbing
+  (sets up the later throughput reveal without spoiling it).
+- Slide 23 (Rung: Python): replaced the generic bullets with first-version specifics from
+  the repo — the asyncio ring orchestrator (smart: master election, flow-control, match
+  coordination), the Hatari gateway software peer, self-test harnesses. Notes flag not to
+  reveal the later dumb-relay simplification.
+
+### 19:50 — Slide 23: removed Hatari (held for v2)
+- Dropped the Hatari gateway bullet from the Python rung; it'll be introduced later to
+  justify version 2. Replaced with self-test harnesses & packet inspection. Notes flag the
+  deferral.
+
+### 20:00 — Populated slide 24 (The AI cast)
+- Filled the AI cast with the real tools/roles: OpenAI Codex/ChatGPT 5.4 & 5.5 (Codex →
+  firmware/TPROTOCOL C+68000 optimisation; ChatGPT → research + architecture), Anthropic
+  Claude Code 5.7 & 5.8 (solution coding + this deck), GitHub Copilot (code reviews),
+  Google NotebookLM (Atari books + the MIDI-Maze TFG by Jesús Ángel González Gorrado).
