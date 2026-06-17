@@ -465,12 +465,51 @@ the comedic engine ("what could go wrong"). ~30s.
 
 ---
 
+## Who's this lady?
+
+<div class="flex justify-center mt-3">
+  <img src="/grace-hopper.jpg" alt="Who's this lady?" style="height: 400px; background:#fff; padding:8px; border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 22px rgba(0,0,0,0.18)" />
+</div>
+
+<div class="text-center manual-cap mt-3">No Googling. Shout it out.</div>
+
+<!--
+AUDIENCE HOOK before we talk tools. It's GRACE HOPPER — most of the room won't place her, which is
+the point. Reveal after a beat, then land WHY she's here: she built the FIRST COMPILER — the original
+leap UP the abstraction ladder; she decided humans shouldn't have to write machine code.
+
+THE HISTORY (this is the spine of the whole talk — tell it):
+- When she proposed machine-independent programming + automatic translation, many programmers and
+  managers thought it impractical, even foolish. Not literally "real programmers use assembly" (that
+  phrasing is modern) — but the SAME sentiment: computers were hugely expensive, memory tiny, CPU
+  cycles precious, hand-written machine code assumed more efficient, and "a compiler could never
+  generate code as good as a skilled programmer."
+- People told her "computers can only do arithmetic; they cannot write programs." Real resistance to
+  expressing programs in something resembling English.
+- Her line: "I had a running compiler and nobody would touch it. They carefully told me computers
+  could only do arithmetic."
+
+THE PUNCHLINE — the exact same argument has repeated for 70 years:
+  machine code → assembly → FORTRAN → C → C++ → Java → Python → AI-generated code.
+At EVERY rung, some experts insisted "real programmers use the layer below" — and every time, most
+software moved UP anyway, because the productivity gain outweighed the lost low-level control.
+
+THE IRONY (lands hard with a retro/embedded crowd): today even assembly programmers happily trust
+optimizing C compilers — and the generated code usually beats hand-written, except for the hottest
+performance-critical routines. The battle Hopper fought in the 1950s IS the battle now being fought
+over AI-assisted programming. That's this whole talk. Tie forward: "today there's a new layer on top
+— let's meet the cast." → the ingredient list / AI cast / abstraction ladder.
+Image: her official US Navy portrait (public domain). ~60–75s.
+-->
+
+---
+
 ## The ingredient list of doom
 
-- 40-year-old hardware
-- 68000 assembly
-- A modern microcontroller (Raspberry Pico / RP2040)
-- C, and Python on top
+- Atari ST: 40-year-old hardware
+- MIDI Maze: 68000 assembly
+- SidecarTridge Multi-device (The SidecarT) — RPi Pico W / RP2040
+- 68000 assembly, C and Python on top
 - Codex, Claude Code, Copilot, NotebookLM
 - One señor from Logroño
 

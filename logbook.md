@@ -649,3 +649,28 @@ C. Closing byline: replaced <repo>/<handle> placeholders with real links — Die
    sidecartridge.com · @sidecartridge · @soyparrilla · github.com/sidecartridge/md-MIDI2IP.
 Reminders (no edits): keep local MP4 fallback for the gameplay embed + live demo; verify QR scans on the projector.
 Build OK. Deck = 46 slides. Uncommitted (on top of 34b5ae7).
+
+### 06:05 — New slide 15 "Who's this lady?" (Grace Hopper)
+- Added an audience-hook slide before "The ingredient list of doom": Grace Hopper's official US Navy
+  portrait (public domain, downloaded to public/grace-hopper.jpg, 960x1200) + the question "Who's this
+  lady?" and prompt "No Googling. Shout it out." Speaker note: she built the first compiler — the first
+  rung up the abstraction ladder the talk rides on — leading into the AI cast / ladder. Build OK. Deck = 47 slides.
+
+### 06:15 — Slide 15 (Grace Hopper): added the compiler-history speaker notes
+- Expanded the speaker note with the history that makes her the talk's spine: the resistance to the
+  first compiler ("computers can only do arithmetic; they cannot write programs"; "I had a running
+  compiler and nobody would touch it"); the 70-year repeat of the same argument (machine code →
+  assembly → FORTRAN → C → C++ → Java → Python → AI-generated code, "real programmers use the layer
+  below" each time); and the irony that asm programmers now trust optimizing C compilers — same battle
+  as today's AI-assisted programming. Speaker-note only; no on-screen change. Build OK. Deck = 47 slides.
+
+### 06:20 — Slide 16 "ingredient list of doom": named the hardware
+- Bullet "A modern microcontroller (Raspberry Pico / RP2040)" → "SidecarTridge Multi-device (The
+  SidecarT) — RPi Pico W / RP2040". Build OK. Deck = 47 slides.
+
+### 06:24 — Slide 16: labelled the first two ingredients
+- "40-year-old hardware" → "Atari ST: 40-year-old hardware"; "68000 assembly" → "MIDI Maze: 68000
+  assembly" (kept deck-consistent "MIDI Maze", no hyphen). Build OK. Deck = 47 slides.
+
+### 06:28 — Slide 16: language-stack bullet → "68000 assembly, C and Python on top"
+- "C, and Python on top" → "68000 assembly, C and Python on top". Build OK. Deck = 47 slides.
