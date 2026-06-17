@@ -628,3 +628,24 @@ bottom. Each entry: date, time (CEST), and what was accomplished.
 - Ladder was 1986→2026→future; added 2023: "peak human coding: best tools, frameworks & knowledge — and
   the last era we wrote every line". Makes the hand-off explicit (2023 = last human-written-code era,
   2026 = AI writes / you judge). Now 4 rungs + durable-skill line + deletions banner; fits. Build OK. Deck=46.
+
+### 05:30 — Consistency pass (reviewed full deck; fixed 6 inconsistencies, each user-approved)
+1. Era year: unified "old era" to 1986 everywhere (inspections slide 1988 → 1986; was clashing with
+   Act 1 / Act 3 recap / take-home).
+2. AI-cast → personalities: fixed stale speaker note (Act 3 grades by abstraction level, four
+   personalities — not the named tools; was "three personalities"). Slide unchanged (no on-screen clash).
+3. AI cast: ChatGPT line → neutral "research & architecture drafts" (was "designed the solution and
+   architecture", which pre-contradicted the Act 3 illusion finding).
+4. Orchestrator naming: box labels all "Orchestrator" (was "Ring Orchestrator" on The plan).
+5. V2 slide titles distinguished: 32 = "…V2 — the fixes", 33 = "…V2 — the wiring".
+6. Stale speaker notes: slide 18 (dropped resolved "downgrade the rung" line; Kafka example →
+   real 16-daughterboard example) and slide 45 (spine now 1986 → 2023 → 2026 → future).
+Build OK. Deck = 46 slides. Uncommitted (on top of 34b5ae7).
+
+### 05:45 — Improvements pass (user-approved each)
+A. Slide 6 title "the first FPS" → "the FPS's grandfather" (defensible vs Maze War; matches body copy).
+B. AI version numbers (ChatGPT 5.4/5.5, Claude Code 5.7/5.8) — kept as-is per user (real versions).
+C. Closing byline: replaced <repo>/<handle> placeholders with real links — Diego Parrilla ·
+   sidecartridge.com · @sidecartridge · @soyparrilla · github.com/sidecartridge/md-MIDI2IP.
+Reminders (no edits): keep local MP4 fallback for the gameplay embed + live demo; verify QR scans on the projector.
+Build OK. Deck = 46 slides. Uncommitted (on top of 34b5ae7).

@@ -126,7 +126,7 @@ layout: section
 
 ---
 
-## MIDI Maze (1987): the first FPS
+## MIDI Maze (1987): the FPS's grandfather
 
 The grandfather of the genre — networked deathmatch on the Atari ST, **no internet, no LAN**, years before "first-person shooter" was even a phrase. Every shooter below descends from it.
 
@@ -485,14 +485,15 @@ also previews the abstraction ladder we'll climb. ~60s.
 
 ## The AI cast
 
-- **OpenAI · Codex / ChatGPT 5.4 & 5.5** — Codex optimised the microfirmware & **TPROTOCOL** (C + 68000); ChatGPT researched & designed the solution and architecture
+- **OpenAI · Codex / ChatGPT 5.4 & 5.5** — Codex optimised the microfirmware & **TPROTOCOL** (C + 68000); ChatGPT — research & architecture drafts
 - **Anthropic · Claude Code 5.7 & 5.8** — solution coding… and this presentation ;-)
 - **GitHub Copilot** — code reviews
 - **Google NotebookLM** — the librarian: Atari reference books + the MIDI-Maze-to-PC reverse-engineering TFG by **Jesús Ángel González Gorrado**
 
 <!--
-Introduce the AI tools as recurring CHARACTERS — we pay them off as the three "personalities"
-in Act 3. Roles: Codex for low-level optimisation (firmware/TPROTOCOL, C & 68000); ChatGPT
+Introduce the AI tools — the cast of the project. NOTE: Act 3 grades AI by abstraction LEVEL
+(four personalities — intern/contractor/senior/architect, by rung), NOT tool-by-tool, so don't
+promise these specific names return as the personalities. Roles: Codex for low-level optimisation (firmware/TPROTOCOL, C & 68000); ChatGPT
 for research + architecture design; Claude Code for the solution code (and this deck);
 Copilot for reviews; NotebookLM as the source-grounded librarian over the Atari books and
 the UNIZAR TFG (reverse-engineering MIDI Maze for PC) by Jesús Ángel González Gorrado. ~75s.
@@ -564,9 +565,10 @@ a pull); hysteresis (output depends on conversation history, not just final requ
 happens because consistency with prior text is heavily rewarded in training while discarding
 work is not — and because it optimises for completeness/coverage/robustness rather than the
 expert's criteria (simplicity, operational cost, coupling, failure modes, maintainability).
-Net: technically correct, operationally absurd (Kafka+CQRS+Event-Sourcing+Saga… for 500 users).
-NOTE: this is a great laugh and a real datapoint — but it sits in tension with the ladder's
-"Research = brilliant" verdict; decide whether to downgrade that rung. ~90s.
+Net: technically correct, operationally absurd (the real proposal — 16 opto-isolated MIDI
+daughterboards + a Linux ring server + a 3-month Gantt — to forward bytes the SidecarT already
+carries; see the next slide). This is why the Act 3 ladder grades Research as an ILLUSION ("looks
+brilliant ⚠"), not brilliant. ~90s.
 -->
 
 ---
@@ -728,7 +730,7 @@ Each **ST + SidecarT** is a node; a **TCP/IP "ring orchestrator"** passes the fr
 
   <!-- ring orchestrator -->
   <rect class="srv" x="290" y="143" width="160" height="64" rx="8" />
-  <text class="srv-t" x="370" y="170" text-anchor="middle">Ring Orchestrator</text>
+  <text class="srv-t" x="370" y="170" text-anchor="middle">Orchestrator</text>
   <text class="srv-s" x="370" y="187" text-anchor="middle">TCP/IP · Python</text>
 </svg>
 
@@ -1151,7 +1153,7 @@ Both fixes land in The Final Architecture. ~70s.
 
 ---
 
-## The Final Architecture V2
+## The Final Architecture V2 — the fixes
 
 <div class="v2grid">
   <div class="v2card">
@@ -1590,7 +1592,7 @@ misbehaves (Winston: control your risk). ~2-3 min including setup.
 
 <div class="eras flex-1">
   <div class="era bad" v-click>
-    <span class="era__year">1988</span>
+    <span class="era__year">1986</span>
     <div class="era__desc">Compile off a floppy, squint at the screen.</div>
     <div class="era__steps">Code 14m · Build 5m · Test 2m · <b>Inspect 2m</b> · Commit 1m</div>
     <div class="era__verdict"><b>~40 laps</b> → ≈ 2 days / feature · slow &amp; expensive: don't fail</div>
@@ -1616,20 +1618,20 @@ ZOOM-OUT, right before the takeaway. The project worked (previous slide) — but
 story is how *building itself* changed. The loop is Code → Build & Reload → Test → Inspect →
 Commit; each lap gives you exactly ONE inspection — one chance to learn — so the metric is how
 many laps (inspections) you can afford. THE FUNDAMENTAL METRIC: laps (iterations) to ship a feature,
-and it keeps collapsing — X(1988) > Y(2023) >> Z(2026): you needed ~40 laps in 1988, ~12 in 2023 (better
+and it keeps collapsing — X(1986) > Y(2023) >> Z(2026): you needed ~40 laps in 1986, ~12 in 2023 (better
 tools/frameworks/knowledge do more per lap), ~3 in 2026 — because the agent FOLDS the many human
 iterations into its own internal loop. Two dimensions per era: laps/feature AND time/lap (per-step times
 are representative — floppy compile/link ≈ minutes; modern HMR ~instant, devs notice >15s; agentic coding
 ≈ 8–48 min/task multi-iteration, NOT the ~8s single-call latency; adjust to your own numbers). Reveal one
 click at a time:
-  1988: ~40 laps × ~24 min/lap ≈ 2 days/feature — floppy compile/link dominates; laps so dear you optimize to NOT fail.
+  1986: ~40 laps × ~24 min/lap ≈ 2 days/feature — floppy compile/link dominates; laps so dear you optimize to NOT fail.
   2023: ~12 laps × ~20 min/lap ≈ 4 hrs/feature — mechanical steps ~0, so your own coding is the lap; fewer laps, fail fast.
   2026: ~3 laps ≈ 1 hr of YOUR time — the loop didn't get faster, it MOVED: the agent grinds many tries internally (10–40 min),
   folding what was several human iterations into one. You stop typing; your whole cost becomes REVIEW →
   judgment is the bottleneck. Don't oversell speed; the honest point is fewer-but-heavier human laps.
 This hands straight into "What to take home": the durable skill is knowing when it's wrong.
 TIE-IN: in this project I was in all three eras at once — 2026 in Python, ~2023 in C, still
-1988 in 68000 asm. The era isn't the date; it's the abstraction level. ~2 min.
+1986 in 68000 asm. The era isn't the date; it's the abstraction level. ~2 min.
 -->
 
 ---
@@ -1652,7 +1654,7 @@ TIE-IN: in this project I was in all three eras at once — 2026 in Python, ~202
 
 <!--
 THE FINAL CONTENT SLIDE (Winston: end on contributions/takeaways, NOT "thank you").
-This is the 1986 → 2026 → future spine. The future row is YOUR prediction — rewrite it in
+This is the 1986 → 2023 → 2026 → future spine. The future row is YOUR prediction — rewrite it in
 your own words. HIGHLIGHT the "deletions, not additions" banner — it's the payoff of the V2
 slide (we beat the problem by ripping out the per-byte handshake AND the smart orchestrator,
 not by adding cleverness). Tie it to judgment: AI makes writing code cheap, so the leverage
@@ -1670,7 +1672,8 @@ class: cover-slide
 # Still too old for this <span class="accent">sh*t</span>
 
 <div class="byline">
-  Diego Parrilla · github.com/&lt;repo&gt; · @&lt;handle&gt;
+  Diego Parrilla · sidecartridge.com · @sidecartridge · @soyparrilla<br>
+  github.com/sidecartridge/md-MIDI2IP
 </div>
 
 <!--
