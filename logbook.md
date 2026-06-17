@@ -336,3 +336,295 @@ bottom. Each entry: date, time (CEST), and what was accomplished.
   firmware/TPROTOCOL C+68000 optimisation; ChatGPT → research + architecture), Anthropic
   Claude Code 5.7 & 5.8 (solution coding + this deck), GitHub Copilot (code reviews),
   Google NotebookLM (Atari books + the MIDI-Maze TFG by Jesús Ángel González Gorrado).
+
+### 20:05 — Committed + pushed the Act 2 restructure batch
+- Commit 5b06934 "Restructure Act 2 and flesh out the build slides" pushed to origin/main.
+
+### 20:12 — Built the "Reality bites → The Final Architecture" reveal (end of Act 2)
+- Added two slides between the Python rung and the AI cast: "…then reality bit" (throughput
+  collision: 1987 cable 3,125 B/s vs v1 ~970 B/s, 3× slower; Hatari introduced to iterate)
+  and "The Final Architecture" (candidate→final·v2 diff: per-byte→fire-and-forget DMA
+  stream, smart→dumb-relay orchestrator, +Hatari peer; banner: beats the 31,250-baud ring).
+  Drafted from md-MIDI2IP facts (marked DRAFT in notes). Deck = 38 slides. Uncommitted.
+
+### 20:22 — Made the abstraction ladder an evolving motif
+- Added a "Research — architecting the solution" rung above Python on the "surprise" ladder
+  (now Research brilliant · Python great · C mediocre · 68000 asm improvising — clean
+  gradient; nudged Python brilliant→great to keep the top→bottom order).
+- Added an earlier, UNGRADED copy ("The abstraction ladder", the map) before Rung 1 — same
+  four rungs, no verdicts, with a "later we'll ask how AI did" teaser. So the ladder appears
+  twice: map first, graded report card at the Act 3 surprise. Deck = 39 slides. Uncommitted.
+
+### 20:45 — Added "Architecting with ChatGPT 5.4/5.5 Research mode" (slide 17)
+- New slide after the abstraction ladder: ChatGPT research-mode failures when asked to
+  architect MIDI Maze over IP (physical-layer box, wiring the SidecarT to the MIDI ports,
+  over-engineering). Generated a QR (qrencode → public/qr-chatgpt-research.svg) linking to
+  the shared research session; captioned "Read the research →". Deck = 40 slides. Uncommitted.
+- OPEN TENSION: this slide shows ChatGPT struggling at Research/architecture, but the ladder
+  rates "Research = brilliant" — user to decide whether to downgrade that rung.
+
+### 20:52 — Slide 17: added the orange "lesson" banner
+- Added a .bigidea banner (like slide 12): the architecture problem was too complex for a
+  good/simple out-of-the-box solution → "We must guide the research."
+
+### 21:03 — Added "The Candidate Architecture V1++" (slide 27)
+- Copied the Candidate Architecture between "…then reality bit" and "The Final Architecture";
+  renamed to V1++ (marker IDs →3 to avoid SVG id clashes). Added a Hatari emulator + the
+  hatari-gateway (Python tool from md-MIDI2IP) hanging off the orchestrator — Hatari ⇄ file
+  FIFOs ⇄ gateway ⇄ TCP/IP ⇄ orchestrator — revealed on click 5 as the "++"; a software peer
+  so you can test/play without a second real ST. Extended viewBox + capped width to fit.
+  Deck = 41 slides. Uncommitted.
+
+### 21:20 — Reordered Act 2 reality sequence + de-animated V1++
+- New slide 26 "MIDI-ring booh-booh": a single ST won't ring (doesn't become MASTER, game
+  never starts, returns the "MIDI-ring booh-booh" error) → orange THE FIX banner: add a
+  computer we know works. Moved "…then reality bit" to AFTER V1++ (now 28). Sequence:
+  26 booh-booh → 27 V1++ (Hatari peer) → 28 reality bit → 29 Final Architecture.
+- Slide 27 (V1++): removed all v-click — the full diagram (incl. Hatari + hatari-gateway)
+  now draws in a single shot.
+- Slide 28: added the orchestrator realization — two wrong calls surface: transport (3× too
+  slow) AND the "smart" orchestrator was overkill → need a fast relay that inspects/peeks,
+  never parses. Deck = 42 slides. Uncommitted.
+
+### 21:28 — Slide 28: split the two failures by kind (speed vs correctness)
+- Transport problem reframed as SPEED and scoped to the hardware path: the per-byte TPROTOCOL
+  handshake crawls only on SidecarT + real Atari ST (cartridge lock-step); the Hatari +
+  hatari-gateway peer is fine — runs at the full speed of Hatari's MIDI emulation → bottleneck
+  is the hardware bridge, not the idea. Relabeled the "bad" era card to "v1 · SidecarT + real ST".
+- Orchestrator problem reframed as CORRECTNESS: the "smart" master-election logic came from a
+  wrong reading of the MIDI protocol in the TFG; we just need a fast relay that peeks, never
+  parses. Build OK. Deck = 42 slides. Uncommitted.
+
+### 21:34 — Moved "The AI cast" earlier (was 30 → now after "The ingredient list of doom")
+- The AI cast now sits between "The ingredient list of doom" (15) and "The abstraction ladder"
+  (16) — the cast of AI tools is introduced before we map them onto the ladder / research slide,
+  instead of late in Act 2. Pure relocation, no content change. Build OK. Deck = 42 slides. Uncommitted.
+
+### 21:50 — Reworked "The Final Architecture" → visual "The Final Architecture V2" (slide 30)
+- Replaced the plain Candidate-vs-Final table with a visual layout: three EPIC "fix cards"
+  (struck-through old assumption → accent fix → green ★ win badge) + a throughput-leap bar chart.
+- Content validated against md-MIDI2IP Iteration-2 epics (Explore agent):
+  - EPIC-09 (Transport): drop per-byte TPROTOCOL handshake → fire-and-forget stream on the
+    commemul ROM3 ring (bit-8 OUT, bit-9 IN + confirm-ack); kills the ~970 B/s ceiling.
+  - EPIC-11 (Orchestrator): the "smart" RingState was a master-election heuristic built on a
+    MISREAD of the MIDI protocol (master-flip bug) → rip out, dumb byte relay + live telemetry.
+  - EPIC-10 (Proof): real 2-player match on hardware behind an automated self-test gate.
+- Accuracy fix: dropped the old "beats the original 31,250-baud ring" overclaim — the repo only
+  claims the handshake ceiling is gone and the maze is playable on real hardware (parity, not
+  out-running the cable). New CSS: .v2grid/.v2card/.speed in styles/main.css. Build OK. Deck = 42 slides.
+
+### 21:58 — Slide 30 (V2) tweaks: drop EPIC tags, rename Proof card
+- Removed the "EPIC-09/10/11 ·" prefixes from the three fix-card badges (now just Transport /
+  Orchestrator / Proof). Renamed the Proof card role "Prove it on metal" → "Prove metal + Hatari"
+  and folded the Hatari software peer (via the gateway) into its body. Build OK. Deck = 42 slides.
+
+### 22:10 — Added the "deletions, not additions" outcome (slide 30 + conclusions)
+- Slide 30 (V2): added a dashed-divided "THE PATTERN" line under the throughput bars — both
+  engineering wins (EPIC-09 handshake, EPIC-11 RingState) were deletions, not additions.
+- "What to take home" (slide 41): added an orange "REMEMBER THIS" bigidea banner highlighting
+  the same lesson — "the new craft is knowing what not to build" — tied to the judgment spine.
+- New CSS: .subtract in styles/main.css. Build OK. Deck = 42 slides. Uncommitted.
+
+### 22:25 — Slide 18: added the "why" diagnosis (anchoring) for ChatGPT's suboptimal architecture
+- Added a compact .diag box between the symptom bullets and the lesson banner: the behaviour is
+  ANCHORING — locks onto its first draft and only edits it (local search), never re-derives;
+  hints get grafted on, bloat survives; optimises for coverage/robustness not simplicity →
+  "correct, but operationally absurd". Shortened the lesson banner to make room.
+- Presenter notes expanded with the full diagnosis (belief/solution persistence, context inertia /
+  trajectory dependence, hysteresis; why = consistency rewarded in training vs discarding work;
+  the Kafka+CQRS+Saga-for-500-users over-engineering example). New CSS: .diag. Build OK. Deck = 42 slides.
+
+### 22:45 — New slide 19 "Technically correct. Operationally absurd." (over-engineering illusion)
+- Added after the ChatGPT-research slide: a wrapped "buzzword tower" (REST→Kafka→CQRS→Event
+  Sourcing→Redis→ElasticSearch→Saga→Metrics) "…to relay a handful of MIDI bytes between 2-4 STs",
+  punchline "Nothing is wrong. Everything is unnecessary." (green/red), and an orange THE ILLUSION
+  banner: research-grade AI LOOKS most competent at the top of the ladder, but it's an illusion that
+  needs expert verification. New CSS: .oe-need/.oechips/.oechip/.oearr/.oe-punch. Build OK. Deck = 43 slides.
+
+### 22:55 — "The surprise" ladder re-graded to resolve the Research-rung tension
+- Changed thesis "AI is only as good as the abstraction is high." → "AI is confidently wrong at
+  both ends." Research rung re-graded from green "brilliant" to a dashed-green "illusion" rung
+  reading "looks brilliant ⚠" (new .rung.illusion CSS: looks solid, isn't). Closing line →
+  "Loud at the metal. Seductive at the top — it looks best exactly where you can least trust it."
+- Now consistent with the new slide 19 (illusion) + slide 18 (anchoring). User chose this option.
+  Build OK. Deck = 43 slides.
+
+### 23:10 — Slide 19: replaced the generic buzzword chain with ChatGPT's REAL over-engineered proposal
+- The REST→Kafka→…→Metrics example was a placeholder. Swapped in the actual "deep research" v1
+  ChatGPT proposed for MIDI Maze over LAN: 16× custom opto-isolated MIDI daughterboards (6N138 /
+  5 V level-shifters) → dedicated 2.4 GHz router → central Linux ring server → framed TCP + CRC32 →
+  heartbeats + telemetry → Atari TSR + command catalog → 3-month Gantt + 16× BOM.
+- New contrast line: "…to forward bytes the SidecarT already carries over its cartridge port — in
+  pure firmware, zero new hardware." Kept the "Nothing is wrong / Everything is unnecessary" punch
+  and THE ILLUSION banner. Presenter note updated with the full absurd proposal. Build OK. Deck = 43 slides.
+
+### 23:20 — New slide 20: audience "show of hands" beat (motto callback)
+- Added a statement-layout slide after the over-engineering reveal: kicker "A quick confession 🙋",
+  joke "I'm too old to solder 16 daughterboards because a chatbot told me to." (callbacks slide 19 +
+  the "Too old for this sh*t" motto), then an audience show-of-hands question: who's survived a
+  "technically correct, operationally absurd" masterpiece? Presenter note guides the interaction.
+  "Rung 1" shifts to slide 21. Build OK. Deck = 44 slides.
+
+### 23:35 — Repurposed the stranded "Rung 1" landmark into a pivot (slide 21)
+- After the reordering, "Rung 1 — That was the metal. Hold onto it." had lost its referent (the
+  slides before it are the AI cast / ladder / research rung, not the metal) and sat back-to-back
+  with the ACT 2 divider. Reworded to "Our turn. / We guide it ourselves — one rung at a time.
+  (the metal's still down there; we'll be back.)" — bridges the "must guide the research" lesson
+  into ACT 2's build and teases the rung climb. Build OK. Deck = 44 slides.
+
+### 23:55 — New slide 33 "The Final Architecture V2 — the wiring" (V1++ diagram, evolved to v2)
+- Cloned the V1++ stack diagram (new marker ids *4 to avoid SVG id clashes) and evolved it to v2,
+  highlighting slide 32's wins visually: SidecarT bridge boxes "TPROTO ⇄ TCP/IP" → "stream ⇄ TCP/IP"
+  with accent glow + "fire-and-forget" note; inter-node hops labelled "stream" and animated;
+  orchestrator "routes the ring/node→node" → "dumb relay / peeks · never parses" with accent glow.
+  Unchanged pieces (XBRA hook, kept-intact MIDI, Hatari peer) left neutral. Bottom: two change chips
+  (Transport / Orchestrator before→after). Shrank SVG to 760px so the chips fit on one row.
+- New CSS: .layer.bridge.upd, .srv.upd, .flow2.stream, .dchanges/.dchange. Build OK. Deck = 45 slides.
+
+### 00:25 — ACT 3 full reframe around the Research/illusion finding
+- The old act was monotonic ("better the higher you go"); its slogan "Brilliant senior at the top /
+  confident intern at the bottom" directly contradicted the new Research finding. Rewrote the spine:
+- Personalities now climb bottom→top with a twist: P1 the intern (asm, FAILS LOUD/green), P2 the
+  junior (C, FAILS QUIETLY/amber), P3 the senior (Python, EARNS YOUR TRUST/green — the setup),
+  P4 the consultant (Research, FAILS SILENT/accent — "looks like the senior, so you stop checking;
+  that's the trap" + 16-daughterboard callback). New visible-vs-invisible-failure framing via .fmode badges.
+- New slogan slide: "The intern improvises. The architect over-engineers. Both sound certain. / The
+  dangerous one is the architect — because it's the one you believe." (replaces the false slogan).
+- Retitled "Reverse engineering with AI" → "Working with AI (without losing faith in humanity)";
+  bullets reframed: verify hardest where it's most convincing; make it show sources; keep the judgment.
+- "What to take home": fixed the middle line — AI *looks* strongest where we've climbed highest, so
+  verify hardest there. Kept demo / inspections-loop / deletions banner / close. New CSS: .fmode.
+  Fixed an accidental duplicate "Did it work?" heading. Build OK. Deck = 46 slides.
+
+### 00:45 — Slide 37 (Personality 1 · the intern): real 68000 failures + actual code + corollary
+- Replaced the placeholder with three real failures from the project's 68000 work: (1) emits 680x0
+  instructions (68020/030) the bare 68000 lacks; (2) repeatedly stores into ROM space despite
+  guidelines that ROM is read-only; (3) over-complicated control flow — branches to a shared
+  .mbt_rte label just to execute an rte.
+- Added the real before-pattern asm (from md-MIDI2IP commit 3d0e422 userfw.s: bra.s .mbt_rte → shared
+  rte) as a code block; the clean version is just "move.l MIDI_IN_STATUS,d0 / rte" inline.
+- Added a "THE COROLLARY" banner: you don't prompt it away — you iterate the generated code until the
+  AI nails it. Two-column flex (failures | code). Build OK. Deck = 46 slides.
+
+### 00:52 — Slide 37: renamed banner label "THE COROLLARY" → "THE RULE"
+- "Corollary" read too academic for a punchy talk banner and undersold the "mandatory" tone; "THE
+  RULE" is crisper and fits the deck's spark-label set (THE LESSON / THE PATTERN / THE ILLUSION).
+
+### 00:55 — Slide 37: banner label → "NON-NEGOTIABLE"
+- Changed the spark label from "THE RULE" to "NON-NEGOTIABLE" (user's choice) — leans hardest into
+  the mandatory-iteration tone.
+
+### 01:10 — Slide 38 (Personality 2): reframed C rung as "the contractor" (flawless code, fatal spec)
+- Rewrote per real experience: AI writes excellent C (iterate → optimized); the MCU hazard is
+  testing/validation, solved by a pre-built microfirmware framework + Claude skill for sandboxed dev →
+  sniper-precise, crash-free, hugely productive. THE CATCH: it still failed because the SPEC was wrong
+  (synchronous commands), not the code. Badges: CODE·FLAWLESS (green) / SPEC·FATAL (accent).
+- Sharpens the act: failure climbs code (asm) → spec (C) → architecture (consultant). Renamed
+  "the junior" → "the contractor" (pairs with P4 the consultant/architect). Build OK. Deck = 46 slides.
+- OPEN: slide 36 "The surprise" ladder still rates C as "mediocre" — now contradicts P2's "flawless".
+
+### 01:20 — Slide 38: made the code-vs-spec iteration contrast explicit
+- Per user: P1 = iterate over the CODE; P2 = iterate over the SPEC. Updated THE CATCH banner to:
+  "The code was flawless; the spec was fatal — synchronous commands killed us. With the intern you
+  iterate the code. With the contractor you iterate the spec." Note updated with the key contrast.
+
+### 01:28 — Slide 36 "The surprise": C rung re-graded mediocre → "strong · sandboxed"
+- Reconciled with Personality 2's "CODE · FLAWLESS": C is genuinely strong given a harness; the failure
+  was the spec (Research rung), not the code. Ladder now: Research=looks brilliant⚠, Python=great,
+  C=strong·sandboxed, asm=improvising. Both-ends thesis intact (problem rungs are the two ends).
+
+### 01:40 — Slide 39 (Personality 3 · the senior): Python = the delegation peak
+- Reworked per real experience: no framework hand-holding (picks a good design from the spec);
+  flawless + trivially testable; FULLY AGENTIC self-driving loops (write→test→fix→green, validity
+  checks automated); spec is still the limiter but the test suite surfaces spec flaws fast.
+- Badges: EARNS YOUR TRUST + FULLY AGENTIC (both green). Banner "DELEGATE IT": with good structured
+  specs you can hand most of the work to agentic AI; what's left is the spec + judgment (sets up P4).
+- Completes the through-line: iterate code (P1) → iterate spec (P2) → delegate the whole loop (P3) →
+  but the spec/architecture is the illusion (P4). Build OK. Deck = 46 slides.
+
+### 01:55 — Slide 40 (Personality 4): reworked into the act's payoff; renamed consultant → architect
+- Given the refined P1→P3 through-line, rewrote P4 to pay it off: callback that the fatal spec (sync
+  commands) was authored HERE; invisible failure (no crash, over-engineered, you ship it); the trust
+  trap (looks like the senior you just delegated everything to). Dual badges LOOKS BRILLIANT⚠ (amber) /
+  FAILS SILENT (accent). Pinpoint banner "THE ONE THING YOU CAN'T DELEGATE": delegate everything below;
+  the spec & architecture stay human because competence here is an illusion.
+- Renamed character "the consultant" → "the architect" (matches the approved slogan "the architect
+  over-engineers" + pairs with P2 "the contractor": architect designs, contractor builds). Updated all
+  consultant refs in notes. Build OK. Deck = 46 slides.
+
+### 02:10 — Slide 42 "Working with AI": rewrote takeaways to distill ACT 3
+- Replaced the 3 pre-reframe bullets with 4 leverage-ordered playbook items grounded in the act:
+  (1) Build the sandbox first (harness = highest-value human work, P2/P3); (2) Delegate the loop, own
+  the spec (agentic code loop, keep spec/architecture/judgment, P3/P4); (3) Iterate the right layer
+  (code low, spec high, P1/P2); (4) Distrust the most polished answer (architect illusion + cite
+  sources/NotebookLM, P4). Kept the human closing line "You stay the engineer — buddy, not the boss."
+  Build OK. Deck = 46 slides.
+
+### 02:25 — Slide 45 "What to take home": de-echoed vs slide 42; lands as the philosophical finish
+- 2026 rung: dropped tactical "so verify hardest there" (echoed 42#4) → states the illusion as a
+  principle: "AI looks most brilliant exactly where it's least reliable". Future rung: "judgment &
+  verification" → "humans climb up — to judgment & taste" (drops 'verify', 42 owns it; adds role-
+  inversion). Now 42 = tactical playbook, 45 = the arc + principle + deletions kicker. No verbatim echoes.
+- Fixed a flex-layout bug: inline <em> split the 2026 rung into separate flex items (pushed "least
+  reliable" right); wrapped the description in a <span> so it wraps as one unit. Build OK. Deck = 46 slides.
+
+### 02:35 — Slide 43 "Did it work?" → "Demo time!" (live demo holder)
+- Per user (will run the demo live): converted to a statement-layout holder — big "Demo time! 🕹️"
+  + subtitle "MIDI Maze, multiplayer, over IP — live on real hardware." Removed the video placeholder;
+  note updated for the live setup with a recorded clip as fallback. Build OK. Deck = 46 slides.
+
+### 02:50 — Slide 44 "Number of inspections": tightened the loop (review fix)
+- Single spine now: reordered to a correct clockwise cycle Code → Build & Reload → Test → Inspect →
+  Commit (build-before-test, inspect-before-commit); dropped the redundant LEARN! node; Inspect is the
+  sole hero (is-key). Title (inspections) + hero (Inspect) + center ("you only learn once per lap") now
+  agree — inspection = the learning moment. 5 nodes at 72° spacing. Note updated. Build OK. Deck = 46 slides.
+
+### 03:05 — Slide 44: added per-step time-per-era breakdown to each era card
+- New .era__steps line in each card showing time per loop step, Inspect highlighted (accent): 1988
+  Code20m/Build8m/Test5m/Inspect12m/Commit1m; 2023 5m/5s/10s/Inspect2m/5s; 2026 ~0/~0/~0/Inspect←all
+  yours/~0. Shows mechanical steps collapsing to 0 while Inspect becomes the whole cost (ties title +
+  "bottleneck moves to judgment"). Fixed contradictory 2026 desc "Inspections ≈ free" → "AI runs the
+  mechanical lap — iterating is ≈ free". Times are illustrative/adjustable. Build OK. Deck = 46 slides.
+
+### 03:30 — Slide 44: replaced made-up times with research-anchored ones + per-era cycle summary
+- Investigated (web): floppy compile/link ≈ minutes ("five minutes…", multi-min on floppy systems);
+  modern HMR ~instant (<1s), devs notice >15s; AI code synthesis ≈ 8.4s avg, agent runs build/test
+  itself. Applied: 1988 Code3m/Build5m/Test2m/Inspect3m/Commit2m → ≈15 min/lap; 2023 1m/<1s/5s/
+  Inspect30s/5s → ≈2 min/lap; 2026 Code~8s/Build auto/Test auto/Inspect=you/Commit auto → loop ≈ free.
+- "Summarize each cycle": folded a per-era cycle total (≈15 min/lap, ≈2 min/lap, loop ≈ free) into the
+  verdict line. Times labelled representative/adjustable in the note. Build OK. Deck = 46 slides.
+
+### 03:45 — Slide 44: corrected the unrealistic 2026 "~8s" timing (user pushback)
+- The ~8s was a misapplied benchmark (single LLM call latency), NOT real agentic dev time. Same source
+  gives agentic coding ≈ 8–48 min/task, multi-iteration. Fixed 2026 card: "agent drives the whole loop —
+  you supervise & review"; steps Code AI/Build auto/Test auto/Inspect=you/Commit auto; verdict
+  "agent: ~10–40 min & many tries · you: review → bottleneck is judgment". Dropped "loop ≈ free".
+- Reframed honestly: the 2026 loop didn't get faster, it MOVED — agent runs it (minutes, unattended),
+  human cost collapses onto review/judgment. Note updated to warn against overselling speed. Deck = 46.
+
+### 04:00 — Slide 44: reframed around iterations-to-ship-a-feature (X > Y >> Z) per user
+- Added the fundamental metric the slide was missing: laps (iterations) to build a feature collapse across
+  eras — ~40 (1988) > ~12 (2023) >> ~3 (2026). Why: 1988→2023 better tools/frameworks/knowledge do more
+  per lap; 2023→2026 the agent FOLDS many human iterations into its own internal loop.
+- Kicker under title: "Same loop every era — but the laps to ship a feature keep collapsing." Each era
+  verdict now leads with bold laps/feature (× time/lap). 2026: "~3 laps — folds many iterations into one →
+  review is the bottleneck"; desc "agent grinds the loop ~10–40 min, many tries". Note updated. Build OK. Deck = 46.
+
+### 04:20 — Slide 44: fixed the bogus minutes-per-feature (user: "shamefully wrong")
+- Root cause: "Code" (human work/lap) was set absurdly low (1m in 2023) → laps×per-lap implied 24 min to
+  build a feature. Raised Code to realistic values so per-lap totals are sane and laps × time/lap = feature
+  total: 1988 ~24min/lap ×40 ≈ 2 days; 2023 ~20min/lap ×12 ≈ 4 hrs; 2026 ~20min review ×3 ≈ 1 hr of your time.
+- Verdicts now show realistic feature totals (≈2 days → ≈4 hrs → ≈1 hr of your time). Kicker: "laps AND the
+  hours to ship a feature keep collapsing." Note updated. Math is self-consistent. Build OK. Deck = 46 slides.
+
+### 04:35 — Slide 45 "What to take home": 2026 rung updated to carry slide-44's work-shift
+- 2026 rung now: "we live at the top — AI writes the code, you judge it; and it dazzles exactly where
+  it's least reliable" (was just the illusion line). Integrates slide-44's finding (work shifts from
+  writing → judging/review) with the illusion; sharpens 1986↔2026 parallel (humans went down to do the
+  low work in '86; AI does it and humans judge in '26). Future rung + durable-skill line + deletions
+  banner unchanged. Build OK. Deck = 46 slides.
+
+### 04:45 — Slide 45: added the 2023 rung (end of the human-coding era) per user
+- Ladder was 1986→2026→future; added 2023: "peak human coding: best tools, frameworks & knowledge — and
+  the last era we wrote every line". Makes the hand-off explicit (2023 = last human-written-code era,
+  2026 = AI writes / you judge). Now 4 rungs + durable-skill line + deletions banner; fits. Build OK. Deck=46.
