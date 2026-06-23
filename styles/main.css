@@ -482,3 +482,6 @@
 .goal-svg { width: 100%; max-width: 590px; height: auto; display: block; margin: 0.3rem auto 0; }
 .spoke { stroke: var(--ink-soft); stroke-width: 2; }
 .vring { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 4; }
+
+/* ── Hide Slidev's "go to slide" dialog (the slide-list panel) ─────────── */
+#slidev-goto-dialog { display: none !important; }

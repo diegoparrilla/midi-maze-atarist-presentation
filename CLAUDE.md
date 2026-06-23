@@ -7,7 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project context
 
 Repository for a talk: **MIDI Maze over IP for Atari ST** — the slide deck and
-supporting materials for that talk. Licensed GPL v3.
+supporting materials for that talk. Licensed **CC BY-NC 4.0** (Attribution-NonCommercial;
+see LICENSE). Third-party images (box art, screenshots, the public-domain Grace Hopper
+portrait) are excluded.
 
 The deck is authored in Markdown and built with **Slidev** (https://sli.dev).
 The talk content itself is written by the author; validate technical claims

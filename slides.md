@@ -27,8 +27,9 @@ MIDI Maze, Atari ST, Raspberry Pico, AI & other bad decisions.
 <div class="byline">Diego Parrilla</div>
 
 <!--
-WINSTON: open on the PROMISE (next slide), then land the joke. Don't open cold on the joke.
-Keep this slide up while people settle. ~30s.
+No abras con el chiste del título: la promesa de verdad va en la siguiente diapositiva.
+Saludo breve y directo: soy Diego, un Señor de Logroño que hace cosas con ordenadores, y esto va de una mala idea.
+"30s"
 -->
 
 ---
@@ -38,11 +39,14 @@ layout: statement
 # By the end, you'll predict<br>where AI <span class="accent">actually</span> helps —<br>now and in the future
 
 <!--
-THE EMPOWERMENT PROMISE — say it almost verbatim:
-"By the end of this talk you'll be able to look at any layer of the stack — from 68000
-assembly to a Python script — and predict how much an AI can really help you there
-today. And you'll have a working theory of where it helps next — where this is all
-heading." This is the contract. Everything pays this off. ~45s.
+LA PROMESA. Es el contrato de la charla: todo lo demás lo paga. Dilo despacio y mirando al público.
+Casi literal: 
+
+"Al final de la charla vais a poder mirar cualquier capa del stack —de ensamblador del 68000 pasando por
+script de Python, hasta el diseño de la arquitectura— y predecir cuánto os ayuda de verdad la IA ahí hoy. 
+Y os llevaréis una idea de hacia dónde probablemente irá en el futuro."
+
+45s
 -->
 
 ---
@@ -60,20 +64,6 @@ Other people use it to be productive.
 
 ::right::
 
-<!--
-THE ORIGIN STORY (tell it warm, ~90s):
-- I build hardware for 40-year-old computers. I created "The SidecarT" — a cartridge
-  device for the Atari ST — it did surprisingly well. One device became several, and I
-  ended up founding a small company, SidecarTridge. The board and logo in the collage
-  are mine.
-- How did I fall back into retro computing? COVID. Like a lot of people, we genuinely
-  thought we might all die — so we looked back to when we were happy. For me that was my
-  first computer. Pure nostalgia, and I wanted to feel it again.
-- So I started coding a little demo/intro, dug out an old Atari ST to play with… and
-  almost without noticing, I was soldering the first version of The SidecarT.
-- Point: this whole project (and this talk) is that nostalgia, weaponised.
--->
-
 <div class="collage">
   <div class="frame" style="--w:266px; top:12px; left:28px; --r:-2.5deg">
     <img src="/st-cartridge.jpeg" alt="Atari 520 ST with cartridge port" />
@@ -90,8 +80,19 @@ THE ORIGIN STORY (tell it warm, ~90s):
 </div>
 
 <!--
-NOW the joke lands (Winston: joke second, not first). Quick self-intro, establish the
-self-deprecating tone and credibility-by-age. Keep it FAST — 60s max. Don't linger.
+LA HISTORIA DE ORIGEN (cuéntala con calma, en tono cercano).
+- Hago hardware para ordenadores de hace 40 años. Creé "The SidecarT", un cartucho para el Atari ST;
+  funcionó sorprendentemente bien. De un cacharro salieron varios y monté una empresa pequeña,
+  SidecarTridge. La placa y el logo del collage son míos; en la foto soy yo con dieciséis años.
+- ¿Por qué volví al retro? El COVID: como mucha gente, pensamos que igual nos moríamos y miramos atrás,
+  a cuando éramos felices. Para mí, mi primer ordenador. Nostalgia pura, quería volver a sentir aquello.
+- Empecé a programar una intro, desempolvé un Atari ST… y casi sin darme cuenta estaba soldando la
+  primera versión de The SidecarT.
+- El chiste va al final, no al principio: todo este proyecto —y esta charla— es esa nostalgia con mala
+  idea. Tono autocrítico, crédito por viejo. No te enrolles.
+
+
+2 min
 -->
 
 ---
@@ -109,9 +110,15 @@ self-deprecating tone and credibility-by-age. Keep it FAST — 60s max. Don't li
 </div>
 
 <!--
-WINSTON: build a FENCE (distinguish from the talks they expect) + ASK A QUESTION.
-Actually ask. Wait ~7 seconds. Read the hands — that divide between asm-people and
-not is literally the subject of the talk. Call it out.
+Marca la frontera: esto NO es lo que esperan —ni charla de nostalgia ni hype de IA—; va de cómo ha
+cambiado programar de 1986 a 2026 y hacia dónde va.
+
+Acción: haz la pregunta de verdad — "¿quién ha escrito alguna vez una línea de ensamblador?".
+Espera 7 segundos. Mira las manos.
+Señala la división de la sala: esa frontera entre los de ensamblador y el resto es justo el tema de
+la charla.
+
+45s
 -->
 
 ---
@@ -122,7 +129,11 @@ layout: section
 
 # Close to the metal
 
-<!-- Divider. The world where MIDI Maze was born. Fast. -->
+<!-- Separador de acto. 
+
+El mundo donde nació MIDI Maze. Rápido, no te pares. 
+
+10s -->
 
 ---
 
@@ -162,16 +173,14 @@ The grandfather of the genre — networked deathmatch on the Atari ST, **no inte
 </div>
 
 <!--
-Set up the artifact the whole talk hangs on, and give it WEIGHT: MIDI Maze (1987)
-predates Wolfenstein 3D (1992) and Doom (1993) — it's the oldest ancestor of the
-first-person shooter, and it already had networked multiplayer (the thing Doom became
-famous for) FIVE years earlier.
-- The smiley faces are the other players — that's your SYMBOL; point at the exploding
-  smiley on the cover.
-- Walk the lineage left → right: every name here is a household FPS, and they all trace
-  back to this Atari ST game most people have never heard of.
-- Covers are fair-use box art (Wikipedia) — fine for a talk; swap if you prefer.
-~90s.
+Presenta la pieza sobre la que gira toda la charla y dale PESO: MIDI Maze (1987) es anterior a
+Wolfenstein 3D (1992) y a Doom (1993) — el abuelo del shooter en primera persona, y ya tenía
+multijugador en red (lo que hizo famoso a Doom) cinco años antes.
+- Las caras sonrientes son los otros jugadores: ese es tu símbolo. Señala la cara que explota en la portada.
+- Recorre el linaje de izquierda a derecha: todos son FPS conocidísimos y todos vienen de este juego de
+  Atari ST que casi nadie conoce.
+
+90s
 -->
 
 ---
@@ -208,34 +217,43 @@ The original (1987) was **Atari ST**. It later jumped to consoles as **Faceball 
 </div>
 
 <!--
-The reach point: this wasn't a niche Atari curiosity — as Faceball 2000 it shipped on
-Nintendo and Sega handhelds/consoles into the 90s. But the ORIGINAL, the one with the
-MIDI ring, was the Atari ST (highlighted). Note the near-misses too: it was nearly a
-Virtual Boy launch-ish title (NikoChan Battle). ~45s.
+El alcance: no fue una rareza de Atari — como Faceball 2000 llegó a consolas y portátiles de Nintendo
+y Sega en los 90. Pero el ORIGINAL, el del anillo MIDI, fue el Atari ST (resaltado).
+Menciona los casi-fue: estuvo a punto de ser título de Virtual Boy (NikoChan Battle).
+
+45s
 -->
 
 ---
 
 ## MIDI Maze, in motion
 
-<div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/8hSoy1S43dw?rel=0"
-          title="MIDI Maze gameplay — Atari ST, 1987"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+<div class="flex gap-10 items-center justify-center mt-2">
+
+  <div class="flex flex-col gap-2" style="flex:none; width:230px">
+    <img src="/mmjs-06-playing.png" alt="MIDI Maze gameplay (rebuilt in JS)" style="width:100%; border:1px solid var(--line); border-radius:5px; box-shadow:0 4px 12px rgba(0,0,0,0.16)" />
+    <img src="/mmjs-01-mode-menu.png" alt="Solo game / Network game menu" style="width:100%; border:1px solid var(--line); border-radius:5px; box-shadow:0 4px 12px rgba(0,0,0,0.16)" />
+  </div>
+
+  <div class="flex flex-col items-center text-center" style="flex:none; width:330px">
+    <img src="/qr-midimaze.svg" alt="QR — play MIDI Maze" style="width:260px; background:#fff; padding:12px; border:1px solid var(--line); border-radius:12px; box-shadow:0 8px 22px rgba(0,0,0,0.16)" />
+    <div class="mt-2 text-xl"><span class="accent">midimaze.sidecartridge.com</span></div>
+    <div class="mt-2" style="font-size:0.85rem; line-height:1.4">
+      Rebuilt with <strong>Claude Code (Opus 5.8)</strong> from the C sources. Play <strong>Solo mode</strong> now — if it works for everyone, we'll try <span class="accent">network mode</span> later.
+    </div>
+  </div>
+
 </div>
 
-<div class="video-cap">MIDI Maze 1 v1.0 — Xanth FX, 1987 · youtube.com/watch?v=8hSoy1S43dw</div>
-
 <!--
-Play ~30s. Point at the smiley enemies (your SYMBOL), the maze, the speed — and that this
-is real 1987 footage. Then: "remember, every player you'd see here is a separate Atari ST
-wired into the ring."
+Acción: pídeles que escaneen el QR (midimaze.sidecartridge.com) y abran el juego EN EL MÓVIL, en modo Solo.
+Cuéntalo: lo hemos recompilado con Claude Code (Opus 5.8) desde el código fuente en C original.
+Señala la captura del menú —"Solo game / Network game"— y que jueguen un par de minutos en Solo.
 
-⚠️ Embedding YouTube needs internet at talk time. SAFER for the venue: download the clip
-to public/ and swap the iframe for a local file, e.g.:
-  <video controls src="/midimaze-gameplay.mp4" class="w-full"></video>
-Keep a local copy as backup even if you stream.
+Engánchalos: "si va bien para todos, al final probamos el modo en red juntos".
+Ten una captura/vídeo local de respaldo por si falla el wifi.
+
+60s
 -->
 
 ---
@@ -262,11 +280,14 @@ For everyone who wasn't born yet:
 </div>
 
 <!--
-A primer for an audience that may never have seen one. Keep it FAST and concrete: 1985
-home computer, 68000 CPU (the chip in early Macs and the Amiga), a real mouse-driven GUI
-(GEM) before most people had Windows, and — the detail that matters for us — MIDI IN/OUT
-ports built right in, which made it the musician's machine and is the reason MIDI Maze
-could network over MIDI at all. Land the "older than you" joke. ~45s.
+Mini-explicación para quien no lo haya visto nunca. Rápido y concreto: ordenador doméstico de 1985,
+CPU 68000 (la de los primeros Mac y el Amiga), GUI de ratón (GEM) años antes de que la gente tuviera
+Windows y —lo que nos importa— puertos MIDI IN/OUT de serie: por eso era la máquina de los músicos y
+por eso MIDI Maze podía hacer red por MIDI.
+
+Remata el chiste: "si tienes menos de 40, es más viejo que tú".
+
+45s
 -->
 
 ---
@@ -339,11 +360,14 @@ Players chained machine-to-machine through the **MIDI ports** — each ST's OUT 
 </div>
 
 <!--
-THE thing we are going to break. Walk it: the MASTER injects a FRAME and sets the tempo;
-each ST reads the frame on its MIDI IN, stamps in its own player position, and shoves it
-out its MIDI OUT to the next machine — all the way around and back to the MASTER. One full
-lap = one game tick. No server, no switch: a literal cable ring at 31,250 baud.
-The "raw 8-bit, non-standard bytes" detail is the seed of Act 2's "why a PC can't join". ~2 min.
+ESTO es lo que vamos a romper. Recórrelo: el MASTER mete un FRAME y marca el tempo; cada ST lo lee por
+su MIDI IN, escribe su propia posición y lo empuja por su MIDI OUT al siguiente — toda la vuelta y de
+vuelta al MASTER. Una vuelta entera = un tick de juego. Sin servidor, sin switch: un anillo de cable
+literal a 31.250 baudios.
+
+Suelta la semilla: son bytes crudos de 8 bits, no estándar".
+
+2 min
 -->
 
 ---
@@ -379,11 +403,13 @@ Same layered idea as any PC — you call *down* the stack via a `TRAP` (the ST's
 </div>
 
 <!--
-Simplified, audience-friendly mental model: the ST is layered exactly like a machine they
-already know. GEM ≈ the GUI; GEMDOS (trap #1) ≈ the OS/syscalls; BIOS (trap #13) ≈ low-level
-device I/O; XBIOS (trap #14) ≈ hardware drivers. The one thing to remember: a program asks
-the OS for things by firing a 68000 TRAP — the ST's "syscall". MIDI lives down in BIOS &
-XBIOS (highlighted) — and the exact calls are on the next slide. ~60s.
+Modelo mental fácil: el ST está en capas, igual que una máquina que ya conocen. GEM ≈ la GUI;
+GEMDOS (trap #1) ≈ el SO / syscalls; BIOS (trap #13) ≈ E/S de dispositivos de bajo nivel; XBIOS
+(trap #14) ≈ drivers de hardware. Lo único que hay que recordar: un programa le pide cosas al SO
+disparando un TRAP del 68000 — el "syscall" del ST. El MIDI vive abajo, en BIOS y XBIOS (resaltado);
+las llamadas exactas van en la siguiente.
+
+60s
 -->
 
 ---
@@ -433,12 +459,16 @@ Same wire, different abstraction: the ST hands you raw bytes; the PC only speaks
 </div>
 
 <!--
-The crux, as a side-by-side. LEFT (ST): MIDI is BIOS device 3, a dumb serial line — Bconout
-(trap #13) pushes any byte, including 0x00 (the MASTER marker). RIGHT (PC): the OS exposes
-MIDI as a message API — Win32 WINMM. midiOutShortMsg takes a packed DWORD message (status +
-2 data bytes), not raw bytes; there's literally no call for "emit one raw 0x00" (midiOutLongMsg
-only takes a valid SysEx F0..F7), and WINMM filters non-standard data. So the identical-looking task is trivial on the ST and impossible through the PC's MIDI
-stack — which is exactly why we needed the SidecarT to speak raw. ~75s.
+El quid, en paralelo. IZQUIERDA (ST): el MIDI es el dispositivo 3 del BIOS, una línea serie tonta —
+Bconout (trap #13) suelta cualquier byte, incluido el 0x00 (la marca de MASTER). DERECHA (PC): el SO
+expone el MIDI como API de mensajes — WINMM de Win32. midiOutShortMsg recibe un mensaje empaquetado
+(status + 2 bytes de datos), no bytes crudos; no existe llamada para "emitir un 0x00 suelto"
+(midiOutLongMsg solo acepta SysEx válido F0..F7) y WINMM filtra lo no estándar.
+
+Remate: la misma tarea es trivial en el ST e imposible por el stack MIDI del PC — por eso
+necesitábamos que el SidecarT hablara en crudo.
+
+75s
 -->
 
 ---
@@ -448,8 +478,10 @@ layout: statement
 # In 2026, people still<br>play it competitively
 
 <!--
-Surprise beat. Championships at retro meetups, 40 years on. This is WHY it's worth
-reviving over the network — there's a living community. Short, ~30s.
+Golpe sorpresa: campeonatos en quedadas retro, 40 años después. Por eso merece la pena revivirlo en
+red — hay comunidad viva. Corto.
+
+30s
 -->
 
 ---
@@ -459,8 +491,10 @@ layout: statement
 # Let's break the ring<br>and rebuild it over <span class="accent">TCP/IP</span>
 
 <!--
-THE BAD IDEA. Say it sounded great in your head. Beat. This is the project thesis and
-the comedic engine ("what could go wrong"). ~30s.
+LA MALA IDEA. Di que en tu cabeza sonaba genial. Pausa. Es la tesis del proyecto y el motor cómico
+("¿qué podría salir mal?").
+
+30s
 -->
 
 ---
@@ -474,32 +508,32 @@ the comedic engine ("what could go wrong"). ~30s.
 <div class="text-center manual-cap mt-3">No Googling. Shout it out.</div>
 
 <!--
-AUDIENCE HOOK before we talk tools. It's GRACE HOPPER — most of the room won't place her, which is
-the point. Reveal after a beat, then land WHY she's here: she built the FIRST COMPILER — the original
-leap UP the abstraction ladder; she decided humans shouldn't have to write machine code.
+GANCHO con el público antes de hablar de herramientas. Es GRACE HOPPER — casi nadie la reconoce, y ese
+es el truco. Revélalo tras una pausa y aterriza POR QUÉ está aquí: construyó el PRIMER COMPILADOR — el
+primer salto HACIA ARRIBA en la escalera de abstracción; decidió que los humanos no deberían escribir en
+código máquina.
 
-THE HISTORY (this is the spine of the whole talk — tell it):
-- When she proposed machine-independent programming + automatic translation, many programmers and
-  managers thought it impractical, even foolish. Not literally "real programmers use assembly" (that
-  phrasing is modern) — but the SAME sentiment: computers were hugely expensive, memory tiny, CPU
-  cycles precious, hand-written machine code assumed more efficient, and "a compiler could never
-  generate code as good as a skilled programmer."
-- People told her "computers can only do arithmetic; they cannot write programs." Real resistance to
-  expressing programs in something resembling English.
-- Her line: "I had a running compiler and nobody would touch it. They carefully told me computers
-  could only do arithmetic."
+LA HISTORIA (es la columna vertebral de toda la charla — cuéntala):
+- Cuando propuso programación independiente de la máquina y traducción automática, muchos programadores
+  y jefes lo vieron impracticable, hasta absurdo. No literalmente "los programadores de verdad usan
+  ensamblador" (eso es moderno), pero el MISMO sentimiento: los ordenadores eran carísimos, la memoria
+  mínima, los ciclos de CPU preciosos, se daba por hecho que el código máquina a mano era más eficiente,
+  y "un compilador nunca generará código tan bueno como un buen programador".
+- Le decían: "los ordenadores solo saben hacer aritmética; no pueden escribir programas".
+- Su frase: "Tenía un compilador funcionando y nadie quería tocarlo. Me explicaban con paciencia que los
+  ordenadores solo sabían hacer aritmética."
 
-THE PUNCHLINE — the exact same argument has repeated for 70 years:
-  machine code → assembly → FORTRAN → C → C++ → Java → Python → AI-generated code.
-At EVERY rung, some experts insisted "real programmers use the layer below" — and every time, most
-software moved UP anyway, because the productivity gain outweighed the lost low-level control.
+EL REMATE — el mismísimo argumento se repite desde hace 70 años:
+  código máquina → ensamblador → FORTRAN → C → C++ → Java → Python → código generado por IA.
+En cada peldaño, algunos expertos juraban que "los buenos usan la capa de abajo" — y cada vez el software
+subió igualmente, porque la productividad pesaba más que el control de bajo nivel.
 
-THE IRONY (lands hard with a retro/embedded crowd): today even assembly programmers happily trust
-optimizing C compilers — and the generated code usually beats hand-written, except for the hottest
-performance-critical routines. The battle Hopper fought in the 1950s IS the battle now being fought
-over AI-assisted programming. That's this whole talk. Tie forward: "today there's a new layer on top
-— let's meet the cast." → the ingredient list / AI cast / abstraction ladder.
-Image: her official US Navy portrait (public domain). ~60–75s.
+LA IRONÍA (pega fuerte con público retro/embebido): hoy hasta los de ensamblador confían en compiladores
+de C optimizadores, y el código generado suele ganar al hecho a mano salvo en lo más crítico. La batalla
+que dio Hopper en los 50 ES la misma que se libra hoy con la programación asistida por IA. De eso va esta
+charla. Enlaza: "hoy hay una capa nueva encima — vamos a conocer al reparto" → ingredientes / reparto IA / escalera.
+
+60-75s
 -->
 
 ---
@@ -516,8 +550,10 @@ Image: her official US Navy portrait (public domain). ~60–75s.
 <div class="mt-8 text-2xl">Spoiler: <span class="accent">everything</span> went wrong.</div>
 
 <!--
-The cast of the disaster. Land "Spoiler: everything went wrong" as a button. This list
-also previews the abstraction ladder we'll climb. ~60s.
+El reparto del desastre. Remata "Spoiler: todo salió mal" como golpe final. La lista también adelanta
+la escalera de abstracción que vamos a subir.
+
+60s
 -->
 
 ---
@@ -530,12 +566,15 @@ also previews the abstraction ladder we'll climb. ~60s.
 - **Google NotebookLM** — the librarian: Atari reference books + the MIDI-Maze-to-PC reverse-engineering TFG by **Jesús Ángel González Gorrado**
 
 <!--
-Introduce the AI tools — the cast of the project. NOTE: Act 3 grades AI by abstraction LEVEL
-(four personalities — intern/contractor/senior/architect, by rung), NOT tool-by-tool, so don't
-promise these specific names return as the personalities. Roles: Codex for low-level optimisation (firmware/TPROTOCOL, C & 68000); ChatGPT
-for research + architecture design; Claude Code for the solution code (and this deck);
-Copilot for reviews; NotebookLM as the source-grounded librarian over the Atari books and
-the UNIZAR TFG (reverse-engineering MIDI Maze for PC) by Jesús Ángel González Gorrado. ~75s.
+Presenta las herramientas de IA — el reparto del proyecto. OJO: en el Acto 3 calificamos a la IA por
+NIVEL de abstracción (cuatro personalidades — becario / contratista / sénior / arquitecto, por peldaño),
+NO herramienta por herramienta; así que no prometas que estos nombres concretos vuelven como las personalidades.
+Papeles: Codex para optimización de bajo nivel (firmware/TPROTOCOL, C y 68000); ChatGPT para investigación
+y diseño de arquitectura; Claude Code para el código de la solución (y esta presentación); Copilot para
+revisiones; NotebookLM como bibliotecario con fuentes: los libros de Atari y el TFG de la UNIZAR
+(ingeniería inversa de MIDI Maze para PC) de Jesús Ángel González Gorrado.
+
+75s
 -->
 
 ---
@@ -554,10 +593,12 @@ One project, four levels — from the big picture down to the metal. We'll climb
 <div class="mt-6 text-lg">Keep an eye on each rung — later we'll ask how the <span class="accent">AI</span> did at each one.</div>
 
 <!--
-EVOLVING LADDER — appearance #1 (the map). Just the four levels we work at, top (Research /
-architecture) down to the metal (68000 asm). NO verdicts yet — how AI performed at each
-rung is the Act 3 "surprise" payoff (slide reuses this exact ladder, now graded). This also
-sets up the "Rung" language used across Act 2. ~30s.
+LA ESCALERA — primera aparición (el mapa). Solo los cuatro niveles en los que trabajamos, de arriba
+(Research / arquitectura) hasta el metal (ensamblador 68000). AÚN sin notas: cómo le fue a la IA en cada
+peldaño es el "sorpresón" del Acto 3 (la misma escalera, ya calificada). También fija el lenguaje de
+"peldaño" que usamos en el Acto 2.
+
+30s
 -->
 
 ---
@@ -590,24 +631,24 @@ sets up the "Rung" language used across Act 2. ~30s.
 </div>
 
 <!--
-The "Research mode" reality check. ChatGPT 5.4/5.5 in research mode kept missing the point
-when asked to architect MIDI Maze over IP: it insisted on a physical-layer device wired into
-the MIDI DIN ports; even when told to use the SidecarT it wired the SidecarT to the MIDI
-ports; and when told to trap MIDI in firmware it over-engineered. QR links to the full shared
-research session.
-WHY (the diagnosis box): the behaviour is closest to ANCHORING — the model treats its first
-architecture as established fact (it's now part of the context) and does LOCAL search: edit
-the existing design rather than re-derive it from the requirements + new insights. Related
-framings: belief/solution persistence ("you're right, the bus is unnecessary… we'll keep the
-bus but simplify it"); context inertia / trajectory dependence (20 pages of discussion exert
-a pull); hysteresis (output depends on conversation history, not just final requirements). It
-happens because consistency with prior text is heavily rewarded in training while discarding
-work is not — and because it optimises for completeness/coverage/robustness rather than the
-expert's criteria (simplicity, operational cost, coupling, failure modes, maintainability).
-Net: technically correct, operationally absurd (the real proposal — 16 opto-isolated MIDI
-daughterboards + a Linux ring server + a 3-month Gantt — to forward bytes the SidecarT already
-carries; see the next slide). This is why the Act 3 ladder grades Research as an ILLUSION ("looks
-brilliant ⚠"), not brilliant. ~90s.
+El baño de realidad del "Research mode". ChatGPT 5.4/5.5 en modo investigación no pillaba el punto al
+pedirle la arquitectura de MIDI Maze sobre IP: insistía en un aparato de capa física cableado a los
+puertos DIN MIDI; aunque le decías que usara el SidecarT, lo cableaba a los puertos MIDI; y cuando le
+decías que atrapara el MIDI en firmware, sobre-ingenierizaba. El QR lleva a la sesión de research completa.
+POR QUÉ (la caja de diagnóstico): se parece al ANCHORING (anclaje) — el modelo trata su primera
+arquitectura como un hecho (ya forma parte del contexto) y hace búsqueda LOCAL: edita el diseño existente
+en vez de re-derivarlo desde los requisitos + las pistas nuevas. Variantes: persistencia de creencia
+("tienes razón, el bus sobra… pero dejamos el bus y lo simplificamos"); inercia del contexto / dependencia
+de la trayectoria (20 páginas de conversación tiran); histéresis (la salida depende del historial, no solo
+de los requisitos finales). Pasa porque en el entrenamiento se premia ser consistente con el texto previo
+y NO descartar trabajo — y porque optimiza completitud/cobertura/robustez en vez de los criterios del
+experto (simplicidad, coste operativo, acoplamiento, modos de fallo, mantenibilidad).
+Resultado: técnicamente correcto, operativamente absurdo (la propuesta real — 16 placas hijas MIDI
+optoacopladas + un servidor de anillo en Linux + un Gantt de 3 meses — para mover bytes que el SidecarT
+ya transporta; ver la siguiente). Por eso en el Acto 3 la escalera califica Research como ILUSIÓN
+("looks brilliant ⚠"), no como brillante.
+
+90s
 -->
 
 ---
@@ -638,19 +679,20 @@ brilliant ⚠"), not brilliant. ~90s.
 </div>
 
 <!--
-THE PAYOFF to the anchoring slide — and the slide that resolves the ladder tension. This is the
-REAL "deep research" output ChatGPT gave when asked for the SIMPLEST v1 to run original MIDI Maze
-over a LAN: keep the physical MIDI ports and BUILD HARDWARE — 16 custom opto-isolated MIDI
-daughterboards (6N138, 5 V level-shifters, 220R loops) soldered to the SidecarT debug UART — plus
-a dedicated 2.4 GHz AP, a central Linux "ring server", a framed-TCP protocol with CRC16/CRC32
-headers + sequence numbers, heartbeats/telemetry, an Atari TSR with a full command catalog, jitter
-buffers, a validation matrix and a 3-month Gantt chart with a 16× bill of materials. Every piece is
-individually defensible; the whole is absurd — because the SidecarT ALREADY carries the bytes over
-its cartridge port in firmware, so the shipped solution needed zero new hardware. "Nothing is wrong.
-Everything is unnecessary." THE BIG POINT: at the Research/architecture rung the AI LOOKS the most
-competent — and that's the trap. The competence is an illusion that holds up only until an expert
-reviews it; the higher the abstraction, the MORE human verification matters. Pays off in "knowing
-when it's wrong / what not to build". ~75s.
+EL PAGO de la slide de anclaje — y la que resuelve la tensión de la escalera. Esto es la salida REAL de
+"deep research" que dio ChatGPT al pedirle la v1 MÁS SIMPLE para correr MIDI Maze original por una LAN:
+mantener los puertos MIDI físicos y FABRICAR HARDWARE — 16 placas hijas MIDI optoacopladas (6N138,
+level-shifters de 5 V, bucles de 220R) soldadas a la UART de debug del SidecarT — más un AP de 2,4 GHz
+dedicado, un "servidor de anillo" central en Linux, un protocolo TCP con cabeceras y CRC16/CRC32 + números
+de secuencia, heartbeats/telemetría, un TSR de Atari con catálogo de comandos, jitter buffers, una matriz
+de validación y un Gantt de 3 meses con una BOM ×16. Cada pieza se defiende sola; el conjunto es absurdo —
+porque el SidecarT YA mueve los bytes por su puerto de cartucho en firmware, así que la solución final no
+necesitaba hardware nuevo. "Nothing is wrong. Everything is unnecessary."
+LA IDEA FUERTE: en el peldaño de Research/arquitectura la IA PARECE la más competente — y esa es la trampa.
+Esa competencia es una ilusión que aguanta solo hasta que la revisa un experto; cuanto más alta la
+abstracción, MÁS importa la verificación humana. Se paga en "saber cuándo se equivoca / qué no construir".
+
+75s
 -->
 
 ---
@@ -666,13 +708,15 @@ layout: statement
 </div>
 
 <!--
-THE AUDIENCE MOMENT — callback to the motto ("Too old for this sh*t") and to the 16-daughterboard
-proposal we just saw. Deliver the confession line dry, let it breathe, THEN ask the show-of-hands
-question and actually wait for hands. This is the room-bonding beat: every experienced engineer has
-inherited a cathedral that should've been a shed. Land the shared pain, maybe grab one quick war
-story from the audience, then pivot: the thing that saved us from theirs (and from ChatGPT's) is
-the same — experience, taste, knowing what NOT to build. That's the human edge the rest of the talk
-is about. Keep it loose; this is breathing room before we climb back down the rungs. ~60-90s.
+MOMENTO DE PÚBLICO — guiño al lema ("Too old for this sh*t") y a la propuesta de las 16 placas hija que
+acabamos de ver. Suelta la confesión en seco, deja que respire, y LUEGO haz la pregunta de manos —
+espera de verdad a que levanten la mano. Es el momento de conectar con la sala: todo ingeniero con
+experiencia ha heredado una catedral que debía ser una caseta. Aterriza el dolor compartido, pilla quizá
+una batallita rápida del público, y gira: lo que nos salvó de la suya (y de la de ChatGPT) es lo mismo —
+experiencia, criterio, saber qué NO construir. Esa es la ventaja humana de la que va el resto de la charla.
+Suelto y relajado; es un respiro antes de volver a bajar peldaños.
+
+60-90s
 -->
 
 ---
@@ -684,11 +728,12 @@ layout: fact
 We guide it ourselves — one rung at a time. <span style="opacity:0.6">(the metal's still down there; we'll be back.)</span>
 
 <!--
-WINSTON landmark + pivot. Bridges the lesson from the over-engineering beat ("we must guide the
-research; the AI won't simplify on its own") straight into ACT 2's hands-on build. "Our turn" =
-we stop asking the chatbot for a cathedral and start building the shed ourselves, climbing the
-ladder rung by rung. The parenthetical teases the rung climb (68000 / C / Python) coming up.
-Anyone who drifted during the AI detour can rejoin here. ~15s.
+Hito + pivote. Conecta la lección del exceso de ingeniería ("hay que guiar la research; la IA no
+simplifica sola") con el montaje práctico del ACTO 2. "Our turn" = dejamos de pedirle catedrales al
+chatbot y construimos la caseta nosotros, peldaño a peldaño. El paréntesis adelanta la subida (68000 /
+C / Python). Quien se haya despistado en el desvío de IA puede reengancharse aquí.
+
+15s
 -->
 
 ---
@@ -701,8 +746,10 @@ layout: section
 
 <div class="recap">Make every ST believe the cable ring is still there.</div>
 
-<!-- Divider + recap. Act 2 = the plan + the build: introduce the SidecarT and the
-"ring orchestrator" goal BEFORE the architecture, then climb the rungs. -->
+<!-- Separador + recap. Acto 2 = el plan + el montaje: presenta el SidecarT y el objetivo del
+"orquestador de anillo" ANTES de la arquitectura, y luego sube los peldaños. 
+
+10s -->
 
 ---
 layout: two-cols
@@ -719,19 +766,20 @@ Not a "ROM emulator" — a tool to **enhance** the ST. A bizarre **coprocessor**
 
 ::right::
 
-<div class="text-center mt-2">
-  <img src="/sidecart-board.png" alt="SidecarT board" style="width: 230px; background:#fff; padding:8px; border:1px solid var(--line); border-radius:6px; box-shadow:0 6px 16px rgba(0,0,0,0.16)" />
-  <div class="manual-cap">SidecarT · RP2040 + Wi-Fi</div>
+<div class="h-full flex flex-col items-center justify-center text-center">
+  <img src="/sidecart-board.png" alt="SidecarT board" style="width: 268px; background:#fff; padding:8px; border:1px solid var(--line); border-radius:6px; box-shadow:0 6px 16px rgba(0,0,0,0.16)" />
+  <div class="manual-cap mt-2">SidecarT · RP2040 + Wi-Fi</div>
 </div>
 
 <!--
-Introduce the device BEFORE the architecture. THE FRAME: people call it a "ROM emulator",
-but it's really a developer tool that bolts a modern brain onto the ST — a bizarre
-coprocessor. It's a cartridge with an RP2040 + Wi-Fi; the ST can't write to the cartridge
-(read-only bus), so the two talk over TPROTOCOL via ROM reads. Credibility: 2,200+ units
-built and ~200–400 clones — a real, shipping product, not a breadboard. And it's open: GPL
-firmware, CC (non-commercial) hardware — worth saying out loud to an open-source crowd.
-Today we repurpose it as the MIDI-to-network bridge. ~60s.
+Presenta el cacharro ANTES de la arquitectura. EL ENCUADRE: lo llaman "emulador de ROM", pero en realidad
+es una herramienta de desarrollo que le pone un cerebro moderno al ST — un coprocesador raro. Es un
+cartucho con RP2040 + Wi-Fi; el ST no puede escribir en el cartucho (bus de solo lectura), así que se
+hablan por TPROTOCOL mediante lecturas de ROM. Credibilidad: 2.200+ unidades fabricadas y ~200–400 clones
+— producto real que se vende, no una protoboard. Y es abierto: firmware GPL, hardware CC (no comercial) —
+dilo en voz alta ante un público open source. Hoy lo reutilizamos como puente MIDI-a-red.
+
+60s
 -->
 
 ---
@@ -782,11 +830,12 @@ Each **ST + SidecarT** is a node; a **TCP/IP "ring orchestrator"** passes the fr
 </div>
 
 <!--
-The GOAL, stated before the detailed design. Physically it's a STAR (every SidecarT
-connects to one TCP/IP server, the "ring orchestrator"); logically it's the same RING as
-1987 — the orchestrator passes each frame node-to-node in ring order. The hard constraint:
-MIDI Maze and the ST stay 100% unmodified; to them it must be byte-for-byte the old cable
-ring. Next slide: how the pieces actually fit together. ~75s.
+EL OBJETIVO, antes del diseño detallado. Físicamente es una ESTRELLA (cada SidecarT se conecta a un
+servidor TCP/IP, el "orquestador de anillo"); lógicamente es el mismo ANILLO que en 1987 — el orquestador
+pasa cada frame de nodo a nodo en orden de anillo. La restricción dura: MIDI Maze y el ST quedan 100% sin
+tocar; para ellos tiene que ser byte a byte el viejo anillo de cable. Siguiente: cómo encajan las piezas.
+
+75s
 -->
 
 ---
@@ -899,20 +948,21 @@ ring. Next slide: how the pieces actually fit together. ~75s.
 </div>
 
 <!--
-THE diagram that makes the project click. Walk it left → right ONCE:
-1. MIDI Maze calls BIOS/XBIOS to push MIDI bytes; an XBRA hook traps those calls and
-   redirects them — instead of the MIDI port, they go out the cartridge port.
-2. Over the cartridge they ride inside TPROTOCOL. The SidecarT (RP2040) microfirmware
-   unwraps TPROTOCOL, leaves the MIDI bytes untouched, and re-wraps them in TCP/IP.
-3. The TCP/IP server is the matchmaker: every SidecarT connects to it; it routes each
-   packet to the right destination SidecarT.
-4. At the far end the inverse happens — TCP/IP → TPROTOCOL → cartridge → XBRA hook →
-   MIDI Maze. Neither ST ever knows the ring became the Internet.
-KEY LINE: the MIDI payload never changes; only the envelope around it does.
-Every Atari ST and every SidecarT runs the SAME stack (it's an architecture diagram, not
-a sequence diagram). The dashed arc up top is the point: all the nodes together form ONE
-virtual MIDI ring — the cable loop of 1987, closed in software. The matchmaker/router in
-the middle is a Python TCP/IP server. ~2.5 min.
+EL diagrama que hace clic en todo el proyecto. Recórrelo de izquierda a derecha UNA vez:
+1. MIDI Maze llama a BIOS/XBIOS para sacar bytes MIDI; un hook XBRA atrapa esas llamadas y las
+   redirige — en vez de al puerto MIDI, salen por el puerto de cartucho.
+2. Por el cartucho viajan dentro de TPROTOCOL. El microfirmware del SidecarT (RP2040) desenvuelve
+   TPROTOCOL, deja los bytes MIDI intactos y los reenvuelve en TCP/IP.
+3. El servidor TCP/IP es el casamentero: cada SidecarT se conecta a él y enruta cada paquete al
+   SidecarT destino correcto.
+4. En el otro extremo, lo inverso — TCP/IP → TPROTOCOL → cartucho → hook XBRA → MIDI Maze. Ningún ST
+   se entera de que el anillo se volvió Internet.
+FRASE CLAVE: el contenido MIDI nunca cambia; solo cambia el sobre que lo envuelve.
+Cada Atari ST y cada SidecarT corren el MISMO stack (es un diagrama de arquitectura, no de secuencia).
+El arco discontinuo de arriba es el quid: todos los nodos juntos forman UN anillo MIDI virtual — el bucle
+de cable de 1987, cerrado por software. El casamentero/enrutador del centro es un servidor TCP/IP en Python.
+
+2.5 min
 -->
 
 ---
@@ -945,18 +995,19 @@ hook_xbios: cmp.w #12,8(sp)    ; Midiws (MIDI out)?
 ```
 
 <!--
-The mechanism that makes the whole project possible. XBRA ("eXternal BRanch Array") is the
-community-standard way to cooperatively hook a 68000 system vector on the ST: just before
-your handler you place 3 longwords — the magic 'XBRA', a 4-char cookie identifying you, and
-'oldp' = the handler you displaced. Install with Setexc (XBIOS): save the old vector as oldp,
-point the vector at your handler; the cookie + oldp let the chain be walked and removed later.
-KEY: MIDI Maze reaches the MIDI port through BOTH layers, so we hook BOTH vectors —
-trap #13 (BIOS: Bconin/Bconout/Bconstat on device 3) AND trap #14 (XBIOS: Midiws, and the
-MIDI-IN read used for MASTER detection). Each handler checks if the call is MIDI; if so we
-ship the bytes out the cartridge to the SidecarT (TPROTOCOL); if not, jmp to oldp so the
-rest of the OS is untouched. Net effect: MIDI Maze, completely unmodified, thinks it's still
-talking to its MIDI port. (Stack offsets are illustrative — the real ones account for the
-trap frame.) ~2 min.
+El mecanismo que hace posible todo el proyecto. XBRA ("eXternal BRanch Array") es la forma estándar de la
+comunidad para encadenar de forma cooperativa un vector de sistema del 68000 en el ST: justo antes de tu
+handler colocas 3 longwords — la marca 'XBRA', un cookie de 4 caracteres que te identifica y 'oldp' = el
+handler que desplazaste. Se instala con Setexc (XBIOS): guardas el vector antiguo en oldp y apuntas el
+vector a tu handler; el cookie + oldp permiten recorrer y quitar la cadena luego.
+CLAVE: MIDI Maze llega al puerto MIDI por las DOS capas, así que enganchamos los DOS vectores — trap #13
+(BIOS: Bconin/Bconout/Bconstat en el dispositivo 3) Y trap #14 (XBIOS: Midiws, y la lectura de MIDI-IN que
+usa para detectar el MASTER). Cada handler mira si la llamada es MIDI; si lo es, mandamos los bytes por el
+cartucho al SidecarT (TPROTOCOL); si no, jmp a oldp y el resto del SO queda intacto. Efecto neto: MIDI
+Maze, sin tocar nada, cree que sigue hablando con su puerto MIDI. (Los offsets de pila son ilustrativos —
+los reales tienen en cuenta el trap frame.)
+
+2 min
 -->
 
 ---
@@ -979,16 +1030,17 @@ layout: two-cols
 <div class="manual-cap">The SidecarT (RP2040) and the Atari ST</div>
 
 <!--
-FIRST ASSUMPTION ONLY — no spoilers here. MIDI Maze is genuinely lock-step (constraint
-C-01): every MIDI OUT byte is answered by a synchronous IN readback, and that lock-step IS
-the frame clock. So the faithful first assumption was: relay each byte across the bridge,
-in order, with a confirm/ack handshake — reproduce the cable exactly. Mechanism (the
-candidate build): read-only cartridge, so the Pico emulates ROM and snoops ROM3 reads via
-a PIO+DMA ring; the exchange rides TPROTOCOL — the SidecarT's command channel, designed for
-synchronous multi-KB buffer transfers and commands, so each byte drags a lot of plumbing;
-lwIP TCP to the orchestrator; ~4,800 lines of C + PIO.
-DO NOT reveal here that this per-byte handshake turned out 3× too slow — that collision and
-the streaming fix are the "Reality bites → The Final Architecture" turn at the end of Act 2. ~75s.
+SOLO LA PRIMERA SUPOSICIÓN — sin spoilers aquí. MIDI Maze es de verdad lock-step (restricción C-01): cada
+byte de MIDI OUT se responde con una lectura IN síncrona, y ese lock-step ES el reloj de frame. Así que la
+suposición fiel fue: retransmitir cada byte por el puente, en orden, con handshake de confirmación —
+reproducir el cable exacto. Mecanismo (la build candidata): cartucho de solo lectura, así que el Pico
+emula ROM y espía las lecturas de ROM3 con un anillo PIO+DMA; el intercambio va por TPROTOCOL — el canal
+de comandos del SidecarT, hecho para transferencias síncronas de buffers de varios KB y comandos, así que
+cada byte arrastra mucha fontanería; TCP con lwIP hasta el orquestador; ~4.800 líneas de C + PIO.
+NO reveles aquí que ese handshake por byte salió 3× demasiado lento — esa colisión y el arreglo por
+streaming son el giro "la realidad muerde → La Arquitectura Final" del final del Acto 2.
+
+75s
 -->
 
 ---
@@ -1001,12 +1053,14 @@ the streaming fix are the "Reality bites → The Final Architecture" turn at the
 - The layer **furthest from the metal**
 
 <!--
-Rung 3 — first-version Python only (from md-MIDI2IP). The orchestrator (orchestrator.py,
-asyncio TCP server) accepts every node and wires them into a ring; in this first version
-it's the "smart" one — master election, flow-control, match coordination. Plus selftest
-harnesses & packet inspection. Furthest from the metal — the setup for the Act 3 payoff.
-NOTE: don't mention Hatari / the Hatari gateway here — it's introduced LATER to justify v2.
-And don't reveal that the orchestrator is later gutted to a dumb relay — that's the reveal. ~60s.
+Peldaño 3 — solo la primera versión en Python (de md-MIDI2IP). El orquestador (orchestrator.py, servidor
+TCP asyncio) acepta cada nodo y los conecta en anillo; en esta primera versión es el "listo" — elección de
+MASTER, control de flujo, coordinación de partida. Más arneses de self-test e inspección de paquetes. Lo
+más lejos del metal — la preparación del pago del Acto 3.
+OJO: no menciones Hatari / la hatari-gateway aquí — se introduce DESPUÉS para justificar la v2. Y no
+reveles que luego al orquestador lo dejamos en un simple relay — eso es la sorpresa.
+
+60s
 -->
 
 ---
@@ -1029,10 +1083,12 @@ First real test — a single Atari ST + SidecarT. The candidate just… won't ri
 </div>
 
 <!--
-THE BUG that motivates V1++. With a single real ST, the candidate can't form a ring: the
-node doesn't reliably win MASTER, the game never starts, and MIDI Maze sometimes prints its
-own error — literally "MIDI-ring booh-booh". A ring needs more than one believable node. So
-we add a peer we KNOW is correct — next slide: Hatari via the gateway. ~45s.
+EL BUG que motiva la V1++. Con un solo ST real, la candidata no forma anillo: el nodo no gana MASTER de
+forma fiable, la partida no arranca y MIDI Maze a veces suelta su propio error — literalmente "MIDI-ring
+booh-booh". Un anillo necesita más de un nodo creíble. Así que añadimos un compañero que SABEMOS correcto
+— siguiente: Hatari por la gateway.
+
+45s
 -->
 
 ---
@@ -1148,12 +1204,13 @@ we add a peer we KNOW is correct — next slide: Hatari via the gateway. ~45s.
 </div>
 
 <!--
-V1++ = the Candidate Architecture with one addition (revealed on the last click): a software
-peer. The Hatari ST emulator can't speak TCP directly, so the hatari-gateway (a Python tool
-in md-MIDI2IP, bridging Hatari's MIDI via file FIFOs to TCP/IP) connects it to the
-orchestrator — it becomes just another node on the ring. Why it matters: you can develop and
-even play without owning two physical Atari STs. This sets up v2 (fast iteration, hardware
-test pass). ~75s.
+V1++ = la Arquitectura Candidata con un añadido: un compañero por software. El emulador de Atari ST,
+Hatari, no habla TCP directamente, así que la hatari-gateway (una herramienta Python de md-MIDI2IP que
+puentea el MIDI de Hatari por FIFOs de fichero hacia TCP/IP) lo conecta al orquestador — y pasa a ser un
+nodo más del anillo. Por qué importa: puedes desarrollar e incluso jugar sin tener dos Atari ST físicos.
+Esto prepara la v2 (iteración rápida, pasada de pruebas en hardware).
+
+75s
 -->
 
 ---
@@ -1179,15 +1236,16 @@ Now the ring runs — and two wrong calls surface. One is a *speed* problem, the
 - **Orchestrator — correctness:** the **"smart"** one (master election, flow-control) came from a **wrong reading of the MIDI protocol** in the TFG. We don't need any of that smartness — just a **fast relay** that *inspects* the bytes (peeks), never *parses* them.
 
 <!--
-THE TURN — now that the ring actually runs (V1++ with the Hatari peer), we measure it and TWO
-distinct problems surface. (1) SPEED: the per-byte TPROTOCOL handshake runs ~970 B/s on the
-SidecarT + REAL ST path — 3× SLOWER than the 1987 cable (3125) because every byte crosses the
-cartridge in lock-step. Crucially this does NOT happen on the Hatari + hatari-gateway peer —
-that runs at the full speed of Hatari's MIDI emulation — so the bottleneck is the hardware
-bridge, not the concept. (2) CORRECTNESS: the "smart" orchestrator (master election etc.)
-was built on a MISREADING of the MIDI protocol from the TFG (the 0x00=MASTER election logic);
-we don't need that smartness at all — just a fast relay that PEEKS at bytes, never parses.
-Both fixes land in The Final Architecture. ~70s.
+EL GIRO — ahora que el anillo funciona de verdad (V1++ con el peer Hatari), lo medimos y salen DOS
+problemas distintos. (1) VELOCIDAD: el handshake por byte de TPROTOCOL va a ~970 B/s en el camino
+SidecarT + ST REAL — 3× MÁS LENTO que el cable de 1987 (3125) porque cada byte cruza el cartucho en
+lock-step. Y ojo: esto NO pasa en el peer Hatari + hatari-gateway — ese va a toda la velocidad de la
+emulación MIDI de Hatari — así que el cuello de botella es el puente hardware, no la idea. (2) CORRECCIÓN:
+el orquestador "listo" (elección de MASTER, etc.) se construyó sobre una LECTURA EQUIVOCADA del protocolo
+MIDI sacada del TFG (la lógica de 0x00=MASTER); no necesitamos nada de esa listura — solo un relay rápido
+que MIRA los bytes (peek), nunca los parsea. Ambos arreglos aterrizan en La Arquitectura Final.
+
+70s
 -->
 
 ---
@@ -1227,16 +1285,18 @@ Both fixes land in The Final Architecture. ~70s.
 <div class="subtract"><span class="subtract__tag">THE PATTERN</span> Both wins were <strong>deletions, not additions</strong> — the fix was tearing out plumbing, not writing more.</div>
 
 <!--
-THE PAYOFF. Three iterations from md-MIDI2IP (Iteration 2) turned the Candidate into something
-that works: (1) EPIC-09 — drop the per-byte TPROTOCOL handshake for a fire-and-forget byte
-stream on the commemul ROM3 ring (bit-8 OUT, bit-9 IN + confirm-ack); this kills the ~970 B/s
-ceiling that made it 3× slower than the 1987 cable. (2) EPIC-11 — the "smart" orchestrator's
-RingState was a master-election heuristic built on a MISREAD of the MIDI protocol (caused a
-master-flip on hardware); rip it out → a dumb byte relay that never parses, plus live ring
-telemetry. (3) EPIC-10 — validate a real 2-player match on actual STs behind an automated
-self-test gate. Honest framing: v2 removes the artificial handshake ceiling and makes the maze
-playable over IP on real hardware — the goal was parity/playability, not out-running the cable.
-The Hatari + hatari-gateway peer (shown on V1++) is what let us iterate this fast. ~90s.
+LA RECOMPENSA. Tres iteraciones de md-MIDI2IP (Iteración 2) convirtieron la Candidata en algo que funciona:
+(1) EPIC-09 — fuera el handshake por byte de TPROTOCOL; en su lugar, un stream fire-and-forget sobre el
+anillo ROM3 de commemul (bit-8 OUT, bit-9 IN + confirm-ack); esto mata el techo de ~970 B/s que la hacía
+3× más lenta que el cable de 1987. (2) EPIC-11 — el RingState del orquestador "listo" era una heurística de
+elección de MASTER basada en una MALA LECTURA del protocolo MIDI (provocaba un cambio de MASTER en
+hardware); fuera → un relay tonto que nunca parsea, más telemetría del anillo en vivo. (3) EPIC-10 —
+validar una partida real de 2 jugadores en STs de verdad, con un self-test automático de por medio.
+Encuadre honesto: la v2 quita el techo artificial del handshake y deja el maze jugable por IP en hardware
+real — el objetivo era paridad/jugabilidad, no correr más que el cable. El peer Hatari + hatari-gateway
+(visto en V1++) es lo que nos dejó iterar tan rápido.
+
+90s
 -->
 
 ---
@@ -1353,13 +1413,15 @@ The Hatari + hatari-gateway peer (shown on V1++) is what let us iterate this fas
 </div>
 
 <!--
-SAME diagram as V1++, evolved to v2 (highlighted in accent + glow). What changed: (1) the two
-SidecarT bridge boxes go from the synchronous "TPROTO ⇄ TCP/IP" command path to a "stream ⇄
-TCP/IP" fire-and-forget byte stream on the commemul ring (the inter-node hops now animate to read
-as a stream; bit-8 = OUT byte, bit-9 = IN advance + confirm-ack). (2) the orchestrator drops from
-a "smart" ring router to a "dumb relay" that only peeks, never parses, plus live telemetry. The
-XBRA hook, the kept-intact ST MIDI path, and the Hatari software peer are UNCHANGED from V1++ —
-only the glowing pieces moved. This is slide 32's three wins, shown in the wiring. ~60s.
+EL MISMO diagrama que V1++, evolucionado a v2 (resaltado en color + brillo). Qué cambió: (1) las dos cajas
+puente del SidecarT pasan del camino de comandos síncrono "TPROTO ⇄ TCP/IP" a un stream fire-and-forget
+"stream ⇄ TCP/IP" sobre el anillo commemul (los saltos entre nodos ahora se animan como un stream; bit-8 =
+byte OUT, bit-9 = avance IN + confirm-ack). (2) el orquestador baja de "router de anillo listo" a "relay
+tonto" que solo mira (peek), nunca parsea, más telemetría en vivo. El hook XBRA, el camino MIDI del ST
+intacto y el peer Hatari por software siguen IGUAL que en V1++ — solo se movieron las piezas que brillan.
+Son las tres victorias de la slide anterior, vistas en el cableado.
+
+60s
 -->
 
 ---
@@ -1368,7 +1430,9 @@ layout: fact
 
 # One project,<br>four decades of tools
 
-<!-- Landmark. Cycle the thesis: the project is a time machine across the ladder. ~20s. -->
+<!-- Hito. Repite la tesis: el proyecto es una máquina del tiempo que recorre la escalera. 
+
+20s -->
 
 ---
 layout: section
@@ -1380,7 +1444,7 @@ layout: section
 
 <div class="recap">Previously: 1986 metal → 2026 rebuild. Now the payoff.</div>
 
-<!-- Divider into the heart of the talk. -->
+<!-- Separador hacia el corazón de la charla. "10s" -->
 
 ---
 
@@ -1398,13 +1462,14 @@ AI is confidently wrong at <span class="accent">both ends</span>.
 <div class="mt-6 text-xl">Loud at the metal. Seductive at the top — it <span class="accent">looks best</span> exactly where you can least trust it.</div>
 
 <!--
-THE SALIENT IDEA + THE SURPRISE. This is the slide they photograph. TWO failure modes, not one:
-near the metal (C, 68000 asm) it's VISIBLY bad — it improvises and you catch it immediately. At
-the top (Research/architecture) it's INVISIBLY bad — fluent, complete, over-engineered, and it
-LOOKS brilliant, so the errors slip past unless an expert verifies (callback to the "illusion"
-slide). Hence the dashed green Research rung: looks solid, isn't. The unifying point counters the
-"AI replaces engineers" narrative: the danger isn't only where it's weak, it's where it's
-*convincing*. Human judgment/verification is the durable skill. ~2 min — let it land.
+LA IDEA CENTRAL + EL SORPRESÓN. Esta es la que fotografían. DOS modos de fallo, no uno: cerca del metal
+(C, ensamblador 68000) falla VISIBLEMENTE — improvisa y lo pillas al instante. Arriba (Research/arquitectura)
+falla INVISIBLEMENTE — fluido, completo, sobre-ingenierizado, y PARECE brillante, así que los errores cuelan
+salvo que lo verifique un experto (guiño a la slide de la "ilusión"). De ahí el peldaño Research en verde
+discontinuo: parece sólido, no lo es. El punto que lo une va contra el relato de "la IA sustituye a los
+ingenieros": el peligro no está solo donde es débil, sino donde es *convincente*. El criterio/la verificación
+humana es la habilidad duradera. Deja que cale.
+"2 min"
 -->
 
 ---
@@ -1445,15 +1510,15 @@ slide). Hence the dashed green Research rung: looks solid, isn't. The unifying p
 </div>
 
 <!--
-"Improvising so it doesn't get fired" — the funniest, most quotable beat. THREE real failures from
-this project's 68000 work (target/atarist/src/userfw.s): (1) it reaches for 680x0 instructions the
-ST's plain 68000 doesn't have; (2) it repeatedly emits stores into ROM space even after being told
-in the guidelines that ROM is read-only; (3) it over-complicates — e.g. branching to a shared
-.mbt_rte label just to execute an rte, when the clean handler is literally "move.l
-MIDI_IN_STATUS,d0 / rte" inline (real before→after from commit 3d0e422 → current). KEY: these fail
-LOUD — won't assemble, or crash on hardware, so you catch them fast (low danger; contrast the
-architect). COROLLARY: you cannot prompt your way out of it — you must iterate the generated code,
-review pass after review pass, until it's right. ~90s.
+"Improvising so it doesn't get fired" — el momento más gracioso y citable. TRES fallos reales del trabajo
+en 68000 de este proyecto (target/atarist/src/userfw.s): (1) usa instrucciones de 680x0 que el 68000 pelado
+del ST no tiene; (2) escribe en espacio de ROM una y otra vez aunque le dijiste en las guías que la ROM es
+de solo lectura; (3) sobre-complica — p. ej. salta a una etiqueta compartida solo para ejecutar un rte,
+cuando el handler limpio es literalmente "move.l MIDI_IN_STATUS,d0 / rte" en línea (antes→después real del
+commit 3d0e422 → actual). CLAVE: estos fallan ALTO — no ensamblan o petan en hardware, así que los pillas
+rápido (poco peligro; contrasta con el arquitecto). COROLARIO: no te libras prompteando — hay que iterar el
+código generado, revisión tras revisión, hasta que esté bien.
+"90s"
 -->
 
 ---
@@ -1479,18 +1544,18 @@ review pass after review pass, until it's right. ~90s.
 </div>
 
 <!--
-THE REFRAME of the C rung. Counter-intuitive but true: with the right scaffolding, AI writes C
-*beautifully*. (1) Great first-pass C; a couple of iterations and it's optimized. (2) The real
-hazard on a microcontroller is testing/validation, not authoring. (3) So I pre-built the harness —
-a microfirmware framework + a Claude skill that codes inside its sandbox (built months earlier,
-deliberately). (4) Result: sniper-precise, valid, no crashes, hugely productive. THE TWIST: none of
-it saved us, because the failure wasn't the code — it was the SPEC. The synchronous TPROTOCOL
-command design (the v1 bottleneck) was wrong, and the AI faithfully, flawlessly built the wrong
-thing. CODE flawless / SPEC fatal. This is the bridge: the failure has climbed from code (asm) to
-spec — and specs come from up the ladder (→ the architect). Garbage spec in, flawless garbage out.
-KEY CONTRAST with Personality 1: there the iteration loop is over the CODE (review the asm until it's
-right); HERE the code is already right — the loop you must run is over the SPEC. The thing you iterate
-moves up the ladder with the failure. ~90s.
+EL REENFOQUE del peldaño C. Contraintuitivo pero cierto: con el andamiaje adecuado, la IA escribe C
+*precioso*. (1) Buen C a la primera; un par de iteraciones y queda optimizado. (2) El peligro real en un
+micro es el testeo/validación, no escribir. (3) Por eso pre-construí el arnés — un framework de microfirmware
++ una skill de Claude que programa dentro de su sandbox (hecho meses antes, a propósito). (4) Resultado:
+precisión de francotirador, válido, sin cuelgues, muy productivo. EL GIRO: nada de eso salvó la cosa, porque
+el fallo no era el código — era el SPEC. El diseño de comandos síncronos de TPROTOCOL (el cuello de botella
+de la v1) estaba mal, y la IA construyó fielmente, impecablemente, lo equivocado. Código impecable / spec
+fatal. Este es el puente: el fallo subió de código (asm) a spec — y los specs vienen de arriba (→ el
+arquitecto). Spec basura entra, basura impecable sale. CONTRASTE CLAVE con la Personalidad 1: allí el bucle
+es sobre el CÓDIGO; AQUÍ el código ya está bien — el bucle que hay que correr es sobre el SPEC. Lo que iteras
+sube por la escalera con el fallo.
+"90s"
 -->
 
 ---
@@ -1515,15 +1580,17 @@ moves up the ladder with the failure. ~90s.
 </div>
 
 <!--
-THE PEAK OF DELEGATION. At the top of the ladder, in a modern high-level language, AI is at its best:
-(1) no need to prescribe a framework/library — from the spec it chooses a good design; (2) the code is
-flawless; (3) it's trivially testable (a test harness is easy — unlike C on the MCU or asm on the ST);
-(4) so the loop goes FULLY AGENTIC — it writes, tests, fixes and re-runs until green, code-validity
-checks automated, hands-off. (5) And again the limiter was the SPEC, not the code — but here the test
-suite makes spec flaws easy to spot. THE TAKEAWAY: with good, structured specs you can delegate most
-of the work to agentic AI; what's irreducibly yours is the spec + the judgment. THE SETUP for P4: "the
-spec / architecture" is exactly the thing you can't hand off — because that's where the competence is
-an illusion. It earns your trust here, which is what the architect weaponises next. ~75s.
+EL PICO DE LA DELEGACIÓN. Arriba de la escalera, en un lenguaje moderno de alto nivel, la IA está en su
+mejor momento: (1) no hace falta prescribir framework/librería — del spec elige un buen diseño; (2) el
+código es impecable; (3) es trivialmente testeable (un arnés de tests es fácil — al revés que C en el micro
+o asm en el ST); (4) así el bucle se vuelve TOTALMENTE AGÉNTICO — escribe, testea, arregla y reintenta hasta
+verde, comprobaciones de validez automatizadas, sin manos. (5) Y de nuevo el límite era el SPEC, no el
+código — pero aquí el conjunto de tests destapa los fallos del spec rápido. EL APRENDIZAJE: con specs buenos
+y estructurados puedes delegar la mayor parte del trabajo a la IA agéntica; lo irreductiblemente tuyo es el
+spec + el criterio. LA PREPARACIÓN de P4: "el spec / la arquitectura" es justo lo que NO puedes delegar —
+porque ahí la competencia es una ilusión. Aquí se gana tu confianza, y eso es lo que el arquitecto explota
+después.
+"75s"
 -->
 
 ---
@@ -1547,15 +1614,16 @@ an illusion. It earns your trust here, which is what the architect weaponises ne
 </div>
 
 <!--
-THE PAYOFF of the whole ladder (callback to slides 18-20 + the climb P1→P3). The failure has been
-climbing: code (intern) → spec (contractor) → and the spec/architecture itself is authored HERE. So
-the wrong "synchronous commands" spec that doomed C and Python was born on THIS rung. The failure is
-INVISIBLE: nothing crashes, no fabricated opcode — just a fluent, cited, over-engineered design you
-implement flawlessly and ship. And because it reads exactly like the senior you just learned to
-trust (and just delegated everything to, P3), you lower your guard — which is precisely when it's
-most dangerous. THE PINPOINT: P3 said "delegate everything but the spec + judgment." THIS is why —
-the one rung you cannot hand off is the architecture, because here competence is an illusion only an
-expert catches. This is THE finding of the talk. Let it land cold. ~90s.
+EL PAGO de toda la escalera (guiño a las slides de la ilusión + la subida P1→P3). El fallo ha ido subiendo:
+código (becario) → spec (contratista) → y el spec/la arquitectura se escriben AQUÍ. Así que el spec
+equivocado de "comandos síncronos" que hundió a C y a Python nació en ESTE peldaño. El fallo es INVISIBLE:
+nada peta, ni un opcode inventado — solo un diseño fluido, citado y sobre-ingenierizado que implementas
+impecablemente y envías. Y como se lee igual que el sénior en quien acabas de confiar (y al que acabas de
+delegar todo, P3), bajas la guardia — justo cuando es más peligroso. EL PUNTO: P3 decía "delega todo menos
+el spec + el criterio". Esto es POR QUÉ — el único peldaño que no puedes ceder es la arquitectura, porque
+ahí la competencia es una ilusión que solo pilla un experto. Este es EL hallazgo de la charla. Déjalo caer
+en seco.
+"90s"
 -->
 
 ---
@@ -1567,9 +1635,10 @@ layout: statement
 <div class="mt-6 text-2xl">The dangerous one is the architect — because it's the one you <strong>believe</strong>.</div>
 
 <!--
-THE SLOGAN (replaces "brilliant senior / confident intern"). The whole act in one breath: it's not
-dumb-low / smart-high — it's unreliable at BOTH ends, and most dangerous exactly where it's most
-convincing. Say it, pause, then the kicker line. The handle they repeat to a colleague. ~30s.
+EL LEMA (sustituye a "sénior brillante / becario confiado"). Todo el acto en una frase: no es tonto-abajo /
+listo-arriba — es poco fiable en AMBOS extremos, y más peligroso justo donde más convence. Dilo, pausa, y
+luego la frase remate. El asa que repetirán a un colega.
+"30s"
 -->
 
 ---
@@ -1584,17 +1653,17 @@ convincing. Say it, pause, then the kicker line. The handle they repeat to a col
 <div class="mt-6 text-2xl">You stay the engineer. It's the <span class="accent">buddy</span>, not the boss.</div>
 
 <!--
-THE PRACTICAL PLAYBOOK — distilled from ACT 3, in order of leverage:
-(1) BUILD THE SANDBOX — the human move that unlocked everything: a microfirmware framework + a Claude
-    skill so the AI codes inside a safe, testable box (P2/P3). This is where YOU add the most value.
-(2) DELEGATE THE LOOP, OWN THE SPEC — with good structured specs, agentic AI runs write→test→fix on
-    its own (P3); what you keep is the spec, the architecture, the judgment — the things it fakes (P4).
-(3) ITERATE THE RIGHT LAYER — the thing you iterate climbs with the failure: code at the metal (P1),
-    spec higher up (P2). Don't re-prompt code when the spec is what's broken.
-(4) DISTRUST THE POLISHED ANSWER — the architect's illusion (P4): verify hardest where it's most
-    convincing; make it cite primary sources (NotebookLM) instead of trusting its memory.
-Closing line is the human note that earns the slide's title — buddy, not boss. Sets up the demo +
-close. ~90s.
+EL MANUAL PRÁCTICO — destilado del Acto 3, por orden de palanca:
+(1) CONSTRUYE EL SANDBOX — el movimiento humano que lo desbloqueó todo: un framework de microfirmware + una
+    skill de Claude para que la IA programe en una caja segura y testeable (P2/P3). Aquí es donde TÚ aportas más.
+(2) DELEGA EL BUCLE, QUÉDATE EL SPEC — con specs buenos y estructurados, la IA agéntica corre
+    escribe→testea→arregla sola (P3); lo que conservas es el spec, la arquitectura, el criterio — lo que la IA finge (P4).
+(3) ITERA LA CAPA CORRECTA — lo que iteras sube con el fallo: código en el metal (P1), spec más arriba (P2).
+    No vuelvas a promptear código cuando lo roto es el spec.
+(4) DESCONFÍA DE LA RESPUESTA MÁS PULIDA — la ilusión del arquitecto (P4): verifica más fuerte donde más
+    convence; haz que cite fuentes primarias (NotebookLM) en vez de fiarte de su memoria.
+La frase final es la nota humana que justifica el título — colega, no jefe. Prepara el demo + el cierre.
+"90s"
 -->
 
 ---
@@ -1603,12 +1672,19 @@ layout: statement
 
 # Demo time! 🕹️
 
-<div class="mt-6 text-2xl">MIDI Maze, multiplayer, <span class="accent">over IP</span> — live on real hardware.</div>
+<div class="mt-4 text-2xl">MIDI Maze, multiplayer, <span class="accent">over IP</span> — live on real hardware.</div>
+
+<div class="flex flex-col items-center mt-6">
+  <img src="/qr-midimaze.svg" alt="QR — join the game" style="width:220px; background:#fff; padding:12px; border:1px solid var(--line); border-radius:12px; box-shadow:0 8px 22px rgba(0,0,0,0.16)" />
+  <div class="mt-3 text-xl"><span class="accent">midimaze.sidecartridge.com</span> · join in <strong>Network mode</strong></div>
+</div>
 
 <!--
-LIVE DEMO — switch to the setup: real Atari ST(s) + SidecarT bridge(s) + the orchestrator, MIDI Maze
-running multiplayer over TCP/IP. Keep a recorded clip on hand as a fallback in case the live setup
-misbehaves (Winston: control your risk). ~2-3 min including setup.
+DEMO EN VIVO — cambia al montaje: Atari ST real(es) + puente(s) SidecarT + el orquestador, MIDI Maze
+jugando en multijugador sobre TCP/IP. Acción: di al público que escaneen el QR (midimaze.sidecartridge.com)
+y entren en modo Red (Network) para jugar contra nosotros. Ten un vídeo grabado a mano como respaldo por si
+el montaje o el wifi fallan (Winston: controla el riesgo). Incluye el tiempo de montaje.
+"2-3 min"
 -->
 
 ---
@@ -1653,24 +1729,26 @@ misbehaves (Winston: control your risk). ~2-3 min including setup.
 </div>
 
 <!--
-ZOOM-OUT, right before the takeaway. The project worked (previous slide) — but the real
-story is how *building itself* changed. The loop is Code → Build & Reload → Test → Inspect →
-Commit; each lap gives you exactly ONE inspection — one chance to learn — so the metric is how
-many laps (inspections) you can afford. THE FUNDAMENTAL METRIC: laps (iterations) to ship a feature,
-and it keeps collapsing — X(1986) > Y(2023) >> Z(2026): you needed ~40 laps in 1986, ~12 in 2023 (better
-tools/frameworks/knowledge do more per lap), ~3 in 2026 — because the agent FOLDS the many human
-iterations into its own internal loop. Two dimensions per era: laps/feature AND time/lap (per-step times
-are representative — floppy compile/link ≈ minutes; modern HMR ~instant, devs notice >15s; agentic coding
-≈ 8–48 min/task multi-iteration, NOT the ~8s single-call latency; adjust to your own numbers). Reveal one
-click at a time:
-  1986: ~40 laps × ~24 min/lap ≈ 2 days/feature — floppy compile/link dominates; laps so dear you optimize to NOT fail.
-  2023: ~12 laps × ~20 min/lap ≈ 4 hrs/feature — mechanical steps ~0, so your own coding is the lap; fewer laps, fail fast.
-  2026: ~3 laps ≈ 1 hr of YOUR time — the loop didn't get faster, it MOVED: the agent grinds many tries internally (10–40 min),
-  folding what was several human iterations into one. You stop typing; your whole cost becomes REVIEW →
-  judgment is the bottleneck. Don't oversell speed; the honest point is fewer-but-heavier human laps.
-This hands straight into "What to take home": the durable skill is knowing when it's wrong.
-TIE-IN: in this project I was in all three eras at once — 2026 in Python, ~2023 in C, still
-1986 in 68000 asm. The era isn't the date; it's the abstraction level. ~2 min.
+ZOOM-OUT, justo antes del cierre. El proyecto funcionó (slide anterior) — pero la historia de verdad es
+cómo cambió *construir* en sí. El bucle es Código → Build & Reload → Test → Inspeccionar → Commit; cada
+vuelta te da exactamente UNA inspección — una oportunidad de aprender — así que la métrica es cuántas vueltas
+te puedes permitir. LA MÉTRICA FUNDAMENTAL: vueltas (iteraciones) para sacar una feature, y no para de
+encogerse — X(1986) > Y(2023) >> Z(2026): hacían falta ~40 vueltas en 1986, ~12 en 2023 (mejores
+herramientas/frameworks/conocimiento hacen más por vuelta), ~3 en 2026 — porque el agente PLIEGA muchas
+iteraciones humanas en su propio bucle interno. Dos dimensiones por era: vueltas/feature Y tiempo/vuelta
+(los tiempos por paso son representativos — compilar/enlazar en floppy ≈ minutos; HMR moderno ~instantáneo,
+se nota >15s; codificación agéntica ≈ 8–48 min/tarea multi-iteración, NO la latencia de ~8s de una sola
+llamada; ajusta a tus números). Revela de uno en uno (un clic):
+  1986: ~40 vueltas × ~24 min/vuelta ≈ 2 días/feature — domina compilar/enlazar en floppy; vueltas tan caras que optimizas para NO fallar.
+  2023: ~12 vueltas × ~20 min/vuelta ≈ 4 h/feature — pasos mecánicos ~0, así que tu propio código es la vuelta; menos vueltas, falla rápido.
+  2026: ~3 vueltas ≈ 1 h de TU tiempo — el bucle no se hizo más rápido, se MOVIÓ: el agente machaca muchos
+  intentos por dentro (10–40 min), plegando lo que eran varias iteraciones humanas en una. Dejas de teclear;
+  todo tu coste pasa a ser REVISAR → el criterio es el cuello de botella. No vendas velocidad; lo honesto es:
+  menos vueltas, pero más pesadas para el humano.
+Enlaza directo con "Qué te llevas a casa": la habilidad duradera es saber cuándo se equivoca.
+GANCHO: en este proyecto estuve en las tres eras a la vez — 2026 en Python, ~2023 en C, aún 1986 en
+ensamblador 68000. La era no es la fecha; es el nivel de abstracción.
+"2 min"
 -->
 
 ---
@@ -1692,13 +1770,12 @@ TIE-IN: in this project I was in all three eras at once — 2026 in Python, ~202
 </div>
 
 <!--
-THE FINAL CONTENT SLIDE (Winston: end on contributions/takeaways, NOT "thank you").
-This is the 1986 → 2023 → 2026 → future spine. The future row is YOUR prediction — rewrite it in
-your own words. HIGHLIGHT the "deletions, not additions" banner — it's the payoff of the V2
-slide (we beat the problem by ripping out the per-byte handshake AND the smart orchestrator,
-not by adding cleverness). Tie it to judgment: AI makes writing code cheap, so the leverage
-moves to knowing what to remove / not build. Deliver this slowly; it's the thing they carry
-out the door. ~2 min.
+LA ÚLTIMA SLIDE DE CONTENIDO (Winston: termina en aportaciones/conclusiones, NO en "gracias").
+Es la espina 1986 → 2023 → 2026 → futuro. La fila del futuro es TU predicción — reescríbela con tus palabras.
+RESALTA el banner "deletions, not additions" — es el pago de la slide V2 (ganamos arrancando el handshake por
+byte Y el orquestador listo, no añadiendo virguería). Átalo al criterio: la IA abarata escribir código, así
+que la palanca pasa a saber qué quitar / qué no construir. Dilo despacio; es lo que se llevan a casa.
+"2 min"
 -->
 
 ---
@@ -1716,6 +1793,7 @@ class: cover-slide
 </div>
 
 <!--
-Final WORDS = a joke / callback (Winston: leave them laughing, never end on "thank you").
-Links small. Then take questions. Replace repo/handle with the real ones.
+PALABRAS FINALES = chiste / guiño (Winston: que se rían al salir, nunca terminar en "gracias"). Enlaces
+pequeños. Luego, preguntas.
+"20s"
 -->

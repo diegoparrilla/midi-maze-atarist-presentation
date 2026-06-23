@@ -674,3 +674,40 @@ Build OK. Deck = 46 slides. Uncommitted (on top of 34b5ae7).
 
 ### 06:28 — Slide 16: language-stack bullet → "68000 assembly, C and Python on top"
 - "C, and Python on top" → "68000 assembly, C and Python on top". Build OK. Deck = 47 slides.
+
+### 18:50 — Speaker-notes pass (Spanish) + slide 8 reworked to "play it yourself"
+- New rule saved to memory: speaker notes always in Spanish, directions simple/direct, pace in quotes
+  at the END (e.g. "30s"). Hid Slidev's goto dialog via CSS (#slidev-goto-dialog{display:none}).
+- Rewrote notes in Spanish (timing in quotes at end) for slides 1–7. Slide 3: removed the orphan first
+  comment (Slidev only shows the last) and consolidated the origin story + joke into one note.
+- Slide 8 "MIDI Maze, in motion": replaced the YouTube embed with a QR to midimaze.sidecartridge.com
+  + the URL + "Rebuilt with Claude Code (Opus 5.8) from the C sources; play Solo, try network later".
+  Then cherry-picked two screenshots from github.com/diegoparrilla/midi-maze-js (06-playing gameplay +
+  01-mode-menu showing Solo/Network) into public/ and placed them beside the QR. New asset:
+  public/qr-midimaze.svg. Build OK. Deck = 47 slides. Uncommitted (on top of 975cbd8).
+
+### 19:00 — Slide 8 layout rework: bigger QR + aligned columns
+- QR 200px -> 300px; both columns vertically centered (items-center), screenshots 360px / QR column 340px centered. Build OK.
+
+### 19:40 — Speaker notes: full Spanish pass complete (all 47 slides)
+- Converted every slide's <!-- --> note to Spanish per the saved rule: spoken guidance in Spanish,
+  stage/audience directions as short direct imperatives, pace in quotes at the END ("30s" / "2 min").
+- Slide 3: merged the orphan first comment into the last (Slidev only shows the last comment).
+- Kept "Winston:" as the method reference; kept the in-content figures (e.g. ~24 min/vuelta) in slide 45.
+- De-staled a couple of notes (V1++ "revealed on last click" → single-shot; slide-number refs → "la slide anterior").
+  Build OK. Deck = 47 slides. Uncommitted (on top of 975cbd8).
+
+### 19:50 — Slide 44 (Demo time!): added QR to join in Network mode
+- Re-added the qr-midimaze.svg QR + "midimaze.sidecartridge.com · join in Network mode" so the audience
+  can scan and join the live game over the network. Spanish note updated. Build OK. Deck = 47 slides.
+
+### 19:58 — Rewrote README.md
+- Replaced the one-line README with a full deck README: pitch, deck-EN/talk-ES note, play link
+  (midimaze.sidecartridge.com), related projects (md-MIDI2IP, midi-maze-js, sidecartridge.com), build/
+  export commands, structure, GPL-3.0. No AI attribution.
+
+### 20:05 — Relicensed deck GPL-3.0 -> CC BY-NC 4.0
+- LICENSE: full official CC BY-NC 4.0 text (fetched from creativecommons.org) + copyright/attribution
+  header (Diego Parrilla) + third-party-assets exclusion (box art/screenshots; PD Grace Hopper photo).
+- Updated README License section and CLAUDE.md project-context line to CC BY-NC 4.0. SidecarT product
+  "firmware GPL / hardware CC" slide line left as-is (refers to the device, not the deck).
